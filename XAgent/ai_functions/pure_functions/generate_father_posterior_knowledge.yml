@@ -1,0 +1,26 @@
+functions:
+  - name: generate_father_posterior_knowledge
+    parameters:
+      type: object
+      properties:
+        summary:
+          type: string
+        reflection_of_knowledge:
+          type: array
+          items:
+            type: string
+        reflection_of_tool:
+          type: array
+          items:
+            type: object
+            properties:
+              target_tool_name:
+                type: string
+              reflection:
+                type: array
+                items:
+                  type: string
+            required: [target_tool_name, reflection]
+        final_answer:
+          type: string
+      required: [summary,reflection_of_knowledge,final_answer]

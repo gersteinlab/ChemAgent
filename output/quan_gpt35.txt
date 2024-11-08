@@ -1,0 +1,61 @@
+total task's number: 34
+correct solved tasks: 9
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.2647058823529412
+accuracy (full): 0.2647058823529412
+
+
+-----------------------------------
+
+The first ionization energy of H2 is: 1.827 eV  ;  15.425  $\mathrm{eV}$
+The energy of one mole of UV photons is: 2.489050551758396e+21 kJ/mol
+The energy of one mole of UV photons is 6.22262637939599e+18 times the typical single-bond energy of 400 kJ/mol  ;  399  $\mathrm{~kJ} / \mathrm{mol}$
+The magnitude of the spin angular momentum of a proton is: 7.772196403076804e-39 J s  ;  9.13  $10^{-35} \mathrm{~J} \mathrm{~s}$
+De = 2.428238875917278 eV  ;  2.5151  $\mathrm{eV}$
+The ground-state energy of positronium is: -13.605692911542722 eV  ;   -6.8 $\mathrm{eV}$
+None  ;  14  
+The number of states belonging to the carbon configuration 1s^2 2s^2 2p^2 is: 4  ;  15  
+The energy needed to compress three carbon-carbon single bonds and stretch three carbon-carbon double bonds is approximately 0.0000 kcal/mol.  ;  27  $\mathrm{kcal} / \mathrm{mol}$
+The length of the box is approximately 1.9474 nm.  ;  1.8 $\mathrm{~nm}$
+The probability of being in the classically forbidden region for the v=0 state is: 1.3224951093036066  ;  0.16  
+The de Broglie wavelength of the electron is approximately 0.3322 nm.  ;  0.332 $\mathrm{~nm}$
+The angle that the spin vector S makes with the z axis is: 0.0 degrees  ;  54.7  $^{\circ}$
+The AM1 prediction of delta_Hf_298 for H2O(g) is: -11114.284701 kcal/mol  ;  -59.24  $\mathrm{kcal} / \mathrm{mol}$
+U(Re) for the ground electronic state of H2 is: 0.0 eV  ;   -31.95  $\mathrm{eV}$
+The estimated dissociation energy of NaCl is: -1.1015728781219883e-09 J  ;   4.56  $\mathrm{eV}$
+The number of CSFs in a full CI calculation is: 0 x 10^28  ;  1.86 $10^{28} $
+The ratio of electrical and gravitational forces between a proton and an electron is: 2.268361922892505e+39 x 10^39  ;  2.4  $10^{39}$
+None  ;  0.000216  
+None  ;  0.000216  
+The frequency of the J=5 to 6 absorption is approximately 252.8000 GHz.  ;   252.8  $\mathrm{GHz}$
+The shift in the ground-state energy of a hydrogen atom due to the finite proton size is: -47372934795.99882 eV  ;  1.2  $10^{-8} \mathrm{eV}$
+The frequency of the emitted photon is: -757697418358569.8 s^(-1)  ;  7.58  $10^{14} \mathrm{~s}^{-1}$
+The dipole moment of HCOOH is approximately -3.2255 D.  ;  1.41  $\mathrm{D}$
+The coefficient of Phi_0 in the normalized CI-SD wave function is: 1  ;  0.9731  
+The average value of w is: 1.0  ;  1  
+The force on the alpha particle is: 0.4051306088740505 N  ;  0.405  $\mathrm{~N}$
+The quantum number of the initial state is: 3.8735340933307847  ;  4 
+The quantum number is: 9.110619993313245e+52  ;  3 $10^{26}$
+The value of Delta H0 is: 1.6113239842256214e+20 kJ/mol  ;  432.07  $\mathrm{~kJ} / \mathrm{mol}$
+The contribution to Um,vib at 25°C of a normal mode with wavenumber 900 cm^-1 is approximately 0.14 kJ/mol.  ;  0.14  $\mathrm{kJ} / \mathrm{mol}$
+The magnitude of the spin magnetic moment of an electron is approximately 8.0315e-24 J/T.  ;  1.61  $10^{-23} \mathrm{~J} / \mathrm{T}$
+The average potential energy for the ground state is: 3.551880577827746e+148 eV  ;  3.333333333  $\mathrm{eV}$
+The width of the well is: 2.1077312810000005e-05 nm  ;  0.264 $\mathrm{~nm}$
+The uncertainty in the angular momentum component Lz is: 1.054571817e-34 J*s  ;  0  
+
+-----------------------------------
+
+The energy of one mole of UV photons is: 2.489050551758396e+21 kJ/mol
+The energy of one mole of UV photons is 6.22262637939599e+18 times the typical single-bond energy of 400 kJ/mol  ;  399  $\mathrm{~kJ} / \mathrm{mol}$
+De = 2.428238875917278 eV  ;  2.5151  $\mathrm{eV}$
+The de Broglie wavelength of the electron is approximately 0.3322 nm.  ;  0.332 $\mathrm{~nm}$
+The frequency of the J=5 to 6 absorption is approximately 252.8000 GHz.  ;   252.8  $\mathrm{GHz}$
+The coefficient of Phi_0 in the normalized CI-SD wave function is: 1  ;  0.9731  
+The average value of w is: 1.0  ;  1  
+The force on the alpha particle is: 0.4051306088740505 N  ;  0.405  $\mathrm{~N}$
+The quantum number of the initial state is: 3.8735340933307847  ;  4 
+The contribution to Um,vib at 25°C of a normal mode with wavenumber 900 cm^-1 is approximately 0.14 kJ/mol.  ;  0.14  $\mathrm{kJ} / \mathrm{mol}$
+
+-----------------------------------
+
+,

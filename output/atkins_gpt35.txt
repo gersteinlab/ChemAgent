@@ -1,0 +1,149 @@
+
+-----------------------------------
+
+total task's number: 107
+correct solved tasks: 26
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.24299065420560748
+accuracy (full): 0.24299065420560748
+
+
+-----------------------------------
+
+1.6862105703974677  ;  50.7 $\mathrm{atm}$ 
+-24.0  ;  +65.49 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The change in chemical potential of the gas is approximately 64.619 kJ/mol.  ;  +7.3 $\mathrm{kJ} \mathrm{mol}^{-1}$
+66.99718611818304  ;  67 $\mathrm{J} \mathrm{K}^{-1}$ 
+-4125.0  ;  0  
+-1.373 kJ/mol  ;  -1368 $\mathrm{~kJ} \mathrm{~mol}^{-1}$
+w = ?  ;  0  
+168.73263  ;  169  $\mathrm{g} \mathrm{mol}^{-1}$
+The work done during the reversible expansion is: 563.7582980049875 J  ;  -167 $\mathrm{J}$
+-0.0151  ;  -1.5 $\text{kJ}$ 
+0.0  ;  131 $\mathrm{J} \mathrm{mol}^{-1}$
+The value of ΔHm is: 0.0 kJ  ;  +3.60 $\text{kJ}$ 
+The molar entropy of neon at 500 K is approximately 150.52 J K^-1 mol^-1.  ;  152.67 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The final temperature of the argon sample is 298.15 K.  ;  131  $\mathrm{K}$
+The change in entropy when 25 kJ of energy is transferred to a block of iron at 0°C is approximately 91.52480322167308 J/K.  ;  92 $\mathrm{J} \mathrm{K}^{-1}$
+The change in enthalpy (ΔH) is: -47.23 kJ  ;  +3.03 $\text{kJ}$
+-2.9909090909090908e-05  ;  29.9 $\mathrm{K} \mathrm{MPa}^{-1}$
+1.2041333333333335  ;  1.2 $\mathrm{dm}^3 \mathrm{~mol}^{-1}$ 
+The mass of water vapour present in the room is 292.57 kg.  ;  6.2 $\text{kg}$ 
+35.118205978403594  ;  41.40 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+216.8  ;  7 $\mathrm{mol}^{-1}$
+87.79264214046823  ;  +87.8 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The enthalpy change for reaction (3) is approximately -668.26 kJ/mol.  ;  -114.40 $\text{kJ}$ 
+36.8052999631947  ;  +37 $\text{K}$ 
+28668799.9699649  ;  0.118 $\mathrm{nm}$ 
+The entropy change of the surroundings is approximately -98.60808317960758 J/(K·mol).  ;  -87.8 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The value of the absolute zero of temperature on the Neptunian scale is -30 °N.  ;  -233 $^{\circ} \mathrm{N}$
+The compression factor is 0.88  ;  0.88  
+-47.750225838120336 J  ;  -3.8  $\text{J}$
+3.0034305803571426  ;  3.0 $\mathrm{atm}$ 
+0.5101786540690727  ;  0  
+The temperature change that would accompany adiabatic expansion is: -0.0 K  ;  -2.99 $\mathrm{K}$
+0.38384367094128935  ;  0.38  
+The mole fraction of argon in the 'atmospheric nitrogen' sample is 0.5877593055759893  ;  0.011  
+The work done by the system is: -44.060607 J  ;  -20 $\text{J}$ 
+The Joule-Thomson coefficient at 0°C is: -8.101612903225806 K/atm  ;  0.71 $\mathrm{K} \mathrm{atm}^{-1}$
+The expansion coefficient at 320 K is 1.7460160335960833e-06 K^-1.  ;  0.00131 $\mathrm{~K}^{-1}$
+The standard enthalpy of formation at 583 K is approximately 46.954004255 kJ/mol.  ;  +116.0 $\mathrm{kJ} \mathrm{mol}^{-1}$
+27.58008577288831  ;  30 $\mathrm{lb} \mathrm{in}^{-2}$
+5.620290515878865  ;  35.2 $\mathrm{atm}$ 
+10.880269900831694  ;  0.139 $\mathrm{nm}$ 
+4.125  ;  +4.1 $\text{kJ}$ 
+The value of R is 220.5079 J K^(-1) mol^(-1)  ;  8.3147 $\mathrm{JK}^{-1} \mathrm{~mol}^{-1}$
+-3139.8239999999996  ;  -50 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The change in internal energy (ΔU) of the system is approximately -0.020 J.  ;  -20 $\text{J}$ 
+The pressure in the apparatus is: 102.6592007966 kPa  ;  102 $\mathrm{kPa}$
+4.847061999999999  ;  +17.7 $\mathrm{~kJ} \mathrm{~mol}^{-1}$ 
+0.10719549778909288  ;  0.11  
+1.3362960901279999  ;  140 $\text{atm}$
+239.7  ;  240 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The work done by the gas is: -660.0 J  ;  -88 $\mathrm{J}$ 
+The pressure difference between the top and bottom of the laboratory vessel is: -1.8007500000000003 Pa  ;  0.00017  
+The molar volume of water vapor is approximately 0.135 dm^3/mol.  ;  0.1353 $\mathrm{dm}^3 \mathrm{~mol}^{-1}$
+The heat transfer during the process is approximately 0.0002 J.  ;  0  
+The change in entropy of the gas during the compression process is approximately 0.0 J/K.  ;  0  
+1.2336276540900401e-08  ;  0.9974 $\text{atm}$ 
+The maximum non-expansion work per mole that may be obtained from the fuel cell is approximately -21.21414535 kJ/mol.  ;  817.90 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The standard enthalpy change of the reaction Si2H6(g) -> SiH2(g) + SiH4(g) is approximately 159.4 kJ/mol  ;  228 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The change in entropy of the system during the expansion process is approximately -26.76173360795422 J/(K·mol).  ;  +0.60 $\mathrm{J} \mathrm{K} \mathrm{K}^{-1}$
+The compressibility factor from the virial expansion of the van der Waals equation is 1.  ;  0.7158  
+0.07609507500000003  ;  0.0761 $\mathrm{kg} \mathrm{~m}^5 \mathrm{~s}^{-2} \mathrm{~mol}^{-2}$
+0.1127 kJ  ;  +10 $\text{kJ}$ 
+The compression factor is 0.8432122180625863.  ;  0.6957  
+The change in Gibbs energy of 35 g of ethanol when the pressure is increased isothermally from 1 atm to 3000 atm is approximately 133.03548795944235 kJ.  ;  12 $\text{kJ}$ 
+The value of the absolute zero of temperature is approximately -73.4591962905719 °C.  ;  -273 $^{\circ} \mathrm{C}$ 
+The value of b is 4.6055599999999966e-05 m^3 mol^-1. The compression factor is 0.6608738867579377.  ;  0.66  
+The pressure exerted by 1.0 mol Xe when confined to 1.0 dm^3 at 25°C is   ;  21 $\mathrm{atm}$ 
+The total change in entropy is 5.7600690546992075  ;  0  
+The change in enthalpy (ΔH) when the two copper blocks are placed in contact is approximately 1834.89075 J/mol.  ;  0  
+10652.727272727274  ;  3.38 $\mathrm{atm}$ 
+The total change in entropy is approximately 2.8800345273496037 J/K.  ;  +2.9 $\mathrm{J} \mathrm{K}^{-1}$
+0.0 kJ/mol.  ;  +11 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The original pressure of the gas is 5.16  ;  3.42 $ \mathrm{bar}$
+The change in entropy (ΔS) for the system is approximately 6.011689263647237 J/K.  ;  -22.1 $\mathrm{J} \mathrm{K}^{-1}$
+The change in enthalpy is -4.125 kJ.  ;  +5.41 $\text{kJ}$ 
+The pressure of the gas is: 0.04218914767096135 atm  ;  0.042  $\text{atm}$
+1000.0  ;  -100 $\mathrm{J}$
+275.8419630197067  ;  1410  $\mathrm{K}$
+ΔT = -298.1312143119965 K  ;  -0.347 $\text{K}$ 
+43.483  ;  +107 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The pressure exerted by 131 g of xenon gas in a vessel of volume 1.0 dm^3 at 25°C is 20 atm.  ;  24 $\mathrm{atm}$
+20.0  ;  24 $\mathrm{atm}$
+error occurs when solving the task  ;  0.72  
+9.138869160931321  ;  9.14 $\mathrm{kPa}$ 
+The mass of water that needs to be evaporated each day to maintain constant temperature is approximately 4.426 kg.  ;  4.09 $\text{kg}$ 
+2.449114072338556e-05  ;  0.0245 $\mathrm{kPa}$ 
+The molar heat capacity at constant pressure of the gas is: 29.93464052287582 J K^(-1) mol^(-1).  ;  22 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The value of b in m^3/mol is: 2.26e-05 m^3/mol  ;  0.0000226  $\mathrm{~m}^3 \mathrm{~mol}^{-1}$
+150.0  ;  0.5 $\text{m}^3$ 
+The value of ΔS is approximately 36.213566996478285 J/K.  ;  -36.5 $\mathrm{J} \mathrm{K}^{-1}$
+1958382.95  ;  -21 $\mathrm{kJ} \mathrm{mol}^{-1}$
+166.66666666666666  ;  0.0029 $\mathrm{atm}$ 
+The total entropy change for the block at 100°C is approximately -1.03 J/K. The total entropy change for the block at 0°C is approximately 1.41 J/K.  ;  +93.4 $\mathrm{J} \mathrm{K}^{-1}$
+2.35  ;  +2.35 $\text{kJ}$
+-37.5  ;  -4564.7  $\mathrm{kJ} \mathrm{mol}^{-1}$
+The critical constants of the gas are pc = RTC/B and Vc = B/C. The critical compression factor is Zc = 1.  ;  0.333333  
+-80  ;  -383 $\mathrm{kJ} \mathrm{~mol}^{-1}$ 
+-2500 J  ;   -194 $\mathrm{~J}$
+2548.0  ;  2600 $\mathrm{J}$
+23.15491409915152  ;  22 $\mathrm{atm}$ 
+0.024491140723385207  ;  0.0245 $\mathrm{kPa}$ 
+416.0  ;  420  $\mathrm{J}$
+The temperature rise when 10 mg of phenol is burned in the calorimeter is approximately 0.003965 K.  ;  205 $\text{K}$ 
+The final pressure of the carbon dioxide is: 21.750532729424215  ;  22 $\text{kPA}$
+29.93464052287582  ;  30 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The difference of molar Gibbs energy is approximately -0.5462365625611016 kJ/mol.  ;  -0.55 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The change in standard enthalpy of reaction for reaction (3) is approximately -242.564 kJ/mol.  ;  -111.92 $\mathrm{kJ} \mathrm{mol}^{-1}$
+
+-----------------------------------
+
+66.99718611818304  ;  67 $\mathrm{J} \mathrm{K}^{-1}$ 
+168.73263  ;  169  $\mathrm{g} \mathrm{mol}^{-1}$
+1.2041333333333335  ;  1.2 $\mathrm{dm}^3 \mathrm{~mol}^{-1}$ 
+87.79264214046823  ;  +87.8 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+36.8052999631947  ;  +37 $\text{K}$ 
+The compression factor is 0.88  ;  0.88  
+3.0034305803571426  ;  3.0 $\mathrm{atm}$ 
+0.38384367094128935  ;  0.38  
+4.125  ;  +4.1 $\text{kJ}$ 
+The pressure in the apparatus is: 102.6592007966 kPa  ;  102 $\mathrm{kPa}$
+0.10719549778909288  ;  0.11  
+239.7  ;  240 $\mathrm{kJ} \mathrm{mol}^{-1}$
+The molar volume of water vapor is approximately 0.135 dm^3/mol.  ;  0.1353 $\mathrm{dm}^3 \mathrm{~mol}^{-1}$
+The change in entropy of the gas during the compression process is approximately 0.0 J/K.  ;  0  
+0.07609507500000003  ;  0.0761 $\mathrm{kg} \mathrm{~m}^5 \mathrm{~s}^{-2} \mathrm{~mol}^{-2}$
+The total change in entropy is approximately 2.8800345273496037 J/K.  ;  +2.9 $\mathrm{J} \mathrm{K}^{-1}$
+The pressure of the gas is: 0.04218914767096135 atm  ;  0.042  $\text{atm}$
+9.138869160931321  ;  9.14 $\mathrm{kPa}$ 
+2.35  ;  +2.35 $\text{kJ}$
+2548.0  ;  2600 $\mathrm{J}$
+23.15491409915152  ;  22 $\mathrm{atm}$ 
+0.024491140723385207  ;  0.0245 $\mathrm{kPa}$ 
+416.0  ;  420  $\mathrm{J}$
+The final pressure of the carbon dioxide is: 21.750532729424215  ;  22 $\text{kPA}$
+29.93464052287582  ;  30 $\mathrm{J} \mathrm{K}^{-1} \mathrm{~mol}^{-1}$
+The difference of molar Gibbs energy is approximately -0.5462365625611016 kJ/mol.  ;  -0.55 $\mathrm{kJ} \mathrm{mol}^{-1}$
+

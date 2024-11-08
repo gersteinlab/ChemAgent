@@ -1,0 +1,41 @@
+functions:
+  - name: action_reasoning
+    description: give some reason together with a tool call.
+    parameters:
+      properties:
+        plan:
+          description: "Max 1 items about what to do next."
+          items:
+            type: string
+            description: "General future action plan about how can you achieve the goal in human tone. Around 30 words."
+          type: array
+        thought:
+          description: "internal reasoning and thoughts, learn from the former results and correct your action. Around 50 words."
+          type: string
+        reasoning:
+          description: "Why you give the `thought`. Around 100 words."
+          type: string
+        criticism:
+          description: "as a super agent, constructive self-criticism of the current thought and plan on its weakness and strength."
+          type: string
+      required: ["plan", "thought", "reasoning", "criticism"]
+      type: object
+  - name: simple_thought
+    parameters:
+      properties:
+        thought:
+          description: "Why you choose this operation, and what you want to do next?"
+          type: string
+      required: ["thought"]
+      type: object
+  - name: simple_subtask
+    parameters:
+      properties:
+        thought:
+          description: "Why did you give this answer?"
+          type: string
+        answer:
+          description: "The answer will be displayed to the user and processed by subsequent subtasks, so it must contain enough information to help subsequent subtasks proceed smoothly. At the same time, the answer needs to complete the goals and all milestones of the current processing subtask."
+          type: string
+      required: ["thought","answer"]
+      type: object

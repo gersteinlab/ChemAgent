@@ -1,0 +1,70 @@
+total task's number: 49
+correct solved tasks: 7
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.14285714285714285
+accuracy (full): 0.14285714285714285
+
+
+-----------------------------------
+
+-2.14  ;  2.14  ${\circ}$ ; psolve average [0.8104723228099829, 0.7688130152246169] 
+-75,993.75  ;  -75  $\mathrm{~J}$ ; psolve average [0.8099834893528999, 0] 
+-1004.5689988257608  ;  -0.38  $\mathrm{~J} \mathrm{~mol}^{-1}$ ; psolve average [0.7948691487941157, 0] 
+200.07300000000004  ;  234.4  $ \mathrm{~K}$  ; psolve average [0.780322975798457, 0.8044377605904481, 0.8125516821086541] 
+The temperature is: 19645.654965377948 K  ;  5.5  $10^3 \mathrm{~K}$ ; psolve average [0.798612517405404, 0.8289344419538233] 
+133.03548795944235  ;  12  $\mathrm{~kJ}$ ; psolve average [0, 0.8014922865637925, 0.799125031439087] 
+The energy gap between the valence and conduction bands is: 3.5424947872507793 eV  ;  3.54  $\mathrm{eV}$ ; psolve average [0.8270379320277296] 
+The molar mass of tobacco seed globulin is 2.085362554933775e-12 g/mol.  ;  3.61  $10^5 \mathrm{~g} \mathrm{~mol}^{-1}$ ; psolve average [0.7627849694943892, 0.8013516983104506, 0.8300421168312574] 
+187419942.6600487  ;  1.88  $10^8 \mathrm{~m} \mathrm{~s}^{-1}$ ; psolve average [0] 
+20.503561  ;  62.2  $\mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0] 
+The probability that the electron is between x=4.95 nm and 5.05 nm is: 0.019998355143809585  ;  0.020   ; psolve average [0.8059391710277652, 0.7976631369943817] 
+0.000990295504  ;  -1270  $\mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0, 0, 0.7826919453231674, 0.7899814427708164, 0.7877181235625713] 
+2.2163513116065072e-38 m  ;  0.5   ; psolve average [0.7860742378706665, 0] 
+The expected density of diamond is: 5.215539659199991e-05 g/cm^3  ;  7.654  $\mathrm{~g} \mathrm{~cm}^{-3}$ ; psolve average [0.7763851929802472] 
+111.79793234837828  ;  0.87  $\mathrm{~m}$ ; psolve average [0.8005928650635128, 0.7746642561521989] 
+3.340328199087948e-06  ;  1.07  $10^3 \mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0.8115661778343647, 0.8153596654107219] 
+-15116556.79664299  ;  140  $\mathrm{~atm}$ ; psolve average [0.8726632288937739] 
+The difference in local magnetic field between the two regions of the molecule is: -11.4 μT  ;  11  $\mu \mathrm{T}$ ; psolve average [0.7862198086446147, 0.7856042526673451, 0.7931060166998462] 
+1.0  ;  0.8   ; psolve average [0.7199013158195012, 0] 
+2.5e-14  ;  1.7  $10^{-2} \mathrm{~s}$ ; psolve average [0.7727473330500697] 
+The pressure at which the mean free path of argon at $20^{circ} mathrm{C}$ becomes comparable to the diameter of a $100 mathrm{~cm}^3$ vessel is XXX Pa.  ;  0.195  $\mathrm{Pa}$ ; psolve average [0.7690642453182149] 
+-12.250740599077483  ;  -11.2  $\mathrm{~kJ}   \mathrm{~mol}^{-1}$ ; psolve average [0.78622244979109, 0.7896302220406346, 0] 
+1.3252e-19 J  ;  0.69  $\mathrm{~nm}$ ; psolve average [0.8319881406337828, 0.821110827146237, 0.8256584722839823] 
+4.7746482927568594e-05  ;  7.27  $10^6 \mathrm{~m} \mathrm{~s}^{-1}$ ; psolve average [0] 
+7273895.2162422715  ;  7.27  $10^6 \mathrm{~m} \mathrm{~s}^{-1}$ ; psolve average [0] 
+0.0  ;  0.123   ; psolve average [0.7829857928703635] 
+0.001  ;  7.97 $10^3$ ; psolve average [0.7978676294191475] 
+The change in Gibbs free energy (ΔG) for the process is -16.58 J.  ;  -17  $\mathrm{~J}$  ; psolve average [0.8743738192064366, 0.796126504118744] 
+1.6143653131574858  ;  -1.46  $\mathrm{V}$ ; psolve average [0.7690954857269031] 
+The mass of the solid will decrease by -85201.68 mg  ;  16  $\mathrm{mg}$ ; psolve average [0.7915313801641549, 0.8094074236821562, 0.7976313885822003] 
+0.005166784992338081  ;  52  $\mathrm{pm}$ ; psolve average [0.8291674195940417, 0.7826462213354546] 
+28024947479625.72  ;  2.8  $10^{13} \mathrm{~Hz}$ ; psolve average [0.7972308928626499] 
+39.69405000000001  ;  48  $\mathrm{~mJ}$ ; psolve average [0.8299395599823495, 0.8643048232172251] 
+39.69405000000001  ;  48  $\mathrm{~mJ}$ ; psolve average [0.8299395599823495, 0.8643048232172251] 
+4.788 x 10^3  ;  4.4  $10^3$ ; psolve average [0.8040513811932041, 0.811471685452381, 0.7991677364378659] 
+The ionization energy of krypton is 14.043250343814385 eV.  ;  14  $\mathrm{eV}$ ; psolve average [0.8275796431616836, 0.8558795773412591, 0.8213622952110627] 
+0.2326  ;  537  $\mathrm{s}$ ; psolve average [0, 0, 0.8003276400795362] 
+1.0 K  ;  4500 $\mathrm{~K}$ ; psolve average [0.7785763605957084, 0.7849982262916217, 0.8130692695524623] 
+The standard enthalpy of formation of DyCl3(s) is -180.06 kJ/mol.  ;  -994.3  $\mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0.8160557199689346, 0.8151587983313138, 0.8025103807535524] 
+-394.79  ;  -501 $\mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0.7991678923745144] 
+The molar mass of the non-volatile organic compound is: 6.401229035974907 g/mol  ;  85  $\mathrm{~g} \mathrm{~mol}^{-1}$ ; psolve average [0, 0.8106461157259955, 0] 
+88.64300368146802  ;  199.4  $\mathrm{~J} \mathrm{~mol}^{-1} \mathrm{~K}^{-1}$ ; psolve average [0.8288332988463168, 0.7723451210950016, 0.7837859770647495] 
+40000.0  ;  5.9  $10^{-4} \mathrm{~T}$ ; psolve average [0.7502117652061374] 
+52.9  ;  0.42  $\mathrm{pm}$ ; psolve average [0.808190260690262] 
+-0.0  ;  -6.42  $\mathrm{~kJ} \mathrm{~mol}^{-1}$ ; psolve average [0.8527372187562129, 0.8203820915113882] 
+The melting point of ice under a pressure of 50 bar is: -2.14667961041822 K  ;  272.8  $\mathrm{K}$ ; psolve average [0.8042784779531543, 0.7810073386557602] 
+525.0365394166395  ;  524  $ \mathrm{~K}$ ; psolve average [0.8161901720469048, 0.8130130662252363] 
+10.098300000000002  ;  8.7  $\mathrm{~cm}^3$ ; psolve average [0.8746397316271027, 0.8363534442553692] 
+0.0008475715427743347  ;  1.6  $\mu \mathrm{m}$ ; psolve average [0.762972595623345, 0.8079890477864129, 0] 
+
+Correct---------------------------------
+
+-75,993.75  ;  -75  $\mathrm{~J}$ ; psolve average [0.8099834893528999, 0] 
+The energy gap between the valence and conduction bands is: 3.5424947872507793 eV  ;  3.54  $\mathrm{eV}$ ; psolve average [0.8270379320277296] 
+The probability that the electron is between x=4.95 nm and 5.05 nm is: 0.019998355143809585  ;  0.020   ; psolve average [0.8059391710277652, 0.7976631369943817] 
+-12.250740599077483  ;  -11.2  $\mathrm{~kJ}   \mathrm{~mol}^{-1}$ ; psolve average [0.78622244979109, 0.7896302220406346, 0] 
+The change in Gibbs free energy (ΔG) for the process is -16.58 J.  ;  -17  $\mathrm{~J}$  ; psolve average [0.8743738192064366, 0.796126504118744] 
+The ionization energy of krypton is 14.043250343814385 eV.  ;  14  $\mathrm{eV}$ ; psolve average [0.8275796431616836, 0.8558795773412591, 0.8213622952110627] 
+525.0365394166395  ;  524  $ \mathrm{~K}$ ; psolve average [0.8161901720469048, 0.8130130662252363] 
+
+-----------------------------------

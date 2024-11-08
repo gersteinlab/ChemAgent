@@ -1,0 +1,125 @@
+**EXAMPLE 1:**
+Problem:
+Calculating the maximum wavelength capable of photoejection\r\nA photon of radiation of wavelength $305 \\mathrm{~nm}$ ejects an electron from a metal with a kinetic energy of $1.77 \\mathrm{eV}$. Calculate the maximum wavelength of radiation capable of ejecting an electron from the metal.
+
+Response:
+To solve the problem of calculating the maximum wavelength capable of ejecting an electron from a metal when a photon of wavelength 305 nm results in an electron kinetic energy of 1.77 eV, we need to use the photoelectric effect equation and some conversions.
+
+**Formula retrieval:**
+\[ \text{[Formula 1]} \quad E = \frac{hc}{\lambda} \]
+\[ \text{[Formula 2]} \quad E_{\text{photon}} = \phi + E_{\text{kinetic}} \]
+where:
+- \( E \) is the energy of the photon,
+- \( h \) is Planck's constant (\(6.626 \times 10^{-34} \, \text{J s}\)),
+- \( c \) is the speed of light (\(3 \times 10^8 \, \text{m/s}\)),
+- \( \lambda \) is the wavelength of the photon,
+- \( \phi \) is the work function of the metal,
+- \( E_{\text{kinetic}} \) is the kinetic energy of the ejected electron.
+
+**Reasoning/calculation process:**
+[step 1] Convert the given kinetic energy from eV to Joules. \(1 \, \text{eV} = 1.602 \times 10^{-19} \, \text{J}\).
+\[ E_{\text{kinetic}} = 1.77 \, \text{eV} \times 1.602 \times 10^{-19} \, \text{J/eV} \]
+\[ E_{\text{kinetic}} = 2.835 \times 10^{-19} \, \text{J} \]
+
+[step 2] Calculate the energy of the photon corresponding to the initial wavelength of 305 nm.
+\[ \lambda = 305 \, \text{nm} \]
+\[ E = \frac{hc}{\lambda} \]
+\[ E = \frac{6.626 \times 10^{-34} \times 3 \times 10^8}{305 \times 10^{-9}} \, \text{J} \]
+\[ E = 6.51 \times 10^{-19} \, \text{J} \]
+
+[step 3] Determine the work function (\(\phi\)) of the metal using the photoelectric effect equation.
+\[ \phi = E - E_{\text{kinetic}} \]
+\[ \phi = 6.51 \times 10^{-19} - 2.835 \times 10^{-19} \, \text{J} \]
+\[ \phi = 3.675 \times 10^{-19} \, \text{J} \]
+
+[step 4] Calculate the maximum wavelength (\(\lambda_{\text{max}}\)) capable of ejecting an electron using the work function.
+\[ \lambda_{\text{max}} = \frac{hc}{\phi} \]
+\[ \lambda_{\text{max}} = \frac{6.626 \times 10^{-34} \times 3 \times 10^8}{3.675 \times 10^{-19}} \]
+\[ \lambda_{\text{max}} = 542 \, \text{nm} \]
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# Constants
+h = 6.62607015e-34  # Planck's constant, J·s (more precise)
+c = 299792458  # Speed of light, m/s (exact)
+eV_to_J = 1.602176634e-19  # Conversion factor from eV to Joules (exact)
+
+# Given values
+lambda_initial = 305e-9  # Initial wavelength, m
+E_kinetic_eV = 1.77  # Kinetic energy in eV
+
+# Convert kinetic energy to Joules
+E_kinetic = E_kinetic_eV * eV_to_J
+
+# Calculate the energy of the initial photon
+E_photon = (h * c) / lambda_initial
+
+# Calculate the work function (phi)
+phi = E_photon - E_kinetic
+
+# Calculate the maximum wavelength
+lambda_max = (h * c) / phi
+lambda_max_nm = lambda_max * 1e9  # Convert to nm
+
+print(f"The maximum wavelength capable of ejecting an electron from the metal is {lambda_max_nm:.4f} nm.")
+```
+
+
+**EXAMPLE 2:**
+Problem:
+Estimate the molar volume of $\\mathrm{CO}_2$ at $500 \\mathrm{~K}$ and 100 atm by treating it as a van der Waals gas.
+
+Response:
+To solve the problem of estimating the molar volume of \( \mathrm{CO}_2 \) at \( 500 \mathrm{~K} \) and 100 atm by treating it as a van der Waals gas, we need to use the van der Waals equation, which is a modification of the ideal gas law that accounts for the volume occupied by gas molecules and the attractive forces between them.
+
+**Formula retrieval:**
+\[ \text{[Formula 1]} \quad \left( P + \frac{a}{V_m^2} \right) (V_m - b) = RT \]
+where:
+- \( P \) is the pressure of the gas,
+- \( V_m \) is the molar volume of the gas,
+- \( R \) is the universal gas constant (\( 0.0821 \, \text{L atm K}^{-1} \text{mol}^{-1} \)),
+- \( T \) is the temperature,
+- \( a \) and \( b \) are the van der Waals constants specific to each gas.
+
+For \( \mathrm{CO}_2 \), the van der Waals constants are:
+- \( a = 3.59 \, \text{L}^2 \text{atm mol}^{-2} \),
+- \( b = 0.0427 \, \text{L mol}^{-1} \).
+
+**Reasoning/calculation process:**
+[step 1] Convert the given pressure from atm to \( \text{L}^2 \text{atm mol}^{-2} \) if necessary, and check units for consistency.
+\[ P = 100 \, \text{atm} \]
+\[ T = 500 \, \text{K} \]
+
+[step 2] Substitute the values and constants into the van der Waals equation.
+\[ \left( 100 + \frac{3.59}{V_m^2} \right) (V_m - 0.0427) = 0.0821 \times 500 \]
+
+[step 3] This is a non-linear equation in \( V_m \), typically solved numerically for \( V_m \). Use numerical methods to approximate \( V_m \).
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+from scipy.optimize import fsolve
+
+# Constants
+R = 0.0821  # L atm / (mol K)
+T = 500  # K
+P = 100  # atm
+a = 3.59  # L^2 atm / mol^2
+b = 0.0427  # L / mol
+
+# Van der Waals Equation:
+# (P + a/V_m^2) * (V_m - b) = RT
+# Rearrange and define the function to solve:
+def vdW_eqn(V_m):
+    return (P + a / V_m**2) * (V_m - b) - R * T
+
+# Initial guess for V_m
+V_m_initial_guess = R * T / P  # Ideal gas estimate
+
+# Solve using numerical method
+V_m_solution = fsolve(vdW_eqn, V_m_initial_guess)
+
+print("The estimated molar volume of CO2 at 500 K and 100 atm is ", V_m_solution[0], "L/mol")
+```

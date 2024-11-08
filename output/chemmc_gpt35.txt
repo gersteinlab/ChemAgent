@@ -1,0 +1,84 @@
+total task's number: 39
+correct solved tasks: 19
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.48717948717948717
+accuracy (full): 0.48717948717948717
+
+
+-----------------------------------
+
+0.12  ;  0.123 nm  ; psolve average [0.8911129216379033] 
+3.52e-19  ;  3.52 $10^{-19} \mathrm{~J}$ ; psolve average [0.8314696976821269, 0] 
+\frac{3}{2}  ;  1.5   ; psolve average [0.771926539942947] 
+0.3333333333333333  ;  0.33333333   ; psolve average [0, 0, 0] 
+2.94e-23 s  ;  2.9 $10^{-23} \mathrm{~s}$  ; psolve average [0.7613909148404812] 
+5269.090909090909  ;  5300  $\mathrm{~K}$
+ ; psolve average [0.7755039711020204] 
+1  ;  1   ; psolve average [0.7761822363382599] 
+0.0819  ;  0.082 V  ; psolve average [0.8756542607869607, 0.8043673798331175] 
+7.31e-19  ;  479 $\mathrm{~N} \cdot \mathrm{m}^{-1}$  ; psolve average [0] 
+4.600548721972343e-06  ;  3   ; psolve average [0, 0.8302243481078506] 
+The wavelength of light emitted by the helium-neon laser is 473,755,464,601,769.94 meters.  ;  4.738 $10^{14} \mathrm{~Hz}$  ; psolve average [0.8322800971178307] 
+3.31e-23  ;   6.6  $10^{-23} \mathrm{~kg} \cdot \mathrm{m} \cdot \mathrm{s}^{-1}$ ; psolve average [0.85893612302779] 
+The ionization energy of singly ionized helium is -10.20 eV  ;  54.394 $\mathrm{eV}$  ; psolve average [0.8292963570487354, 0.8453190327418477] 
+The uncertainty in the energy of the gamma ray produced is 3.31e-22 J.  ;  7 $10^{-22} \mathrm{~J}$  ; psolve average [0.8094901008095129, 0.7976427151042377] 
+91.35  ;  91.17 nm  ; psolve average [0.8205266462531245, 0.7920255889818474] 
+3.3130e-25 J  ;  7  $10^{-25} \mathrm{~J}$ ; psolve average [0.8028988017969807] 
+2532.49  ;  2500 $\mathrm{K}$  ; psolve average [0.8157899390155694, 0.8160409857925096] 
+3.00e+01  ;  3  $10^{-10} \mathrm{~m}$
+ ; psolve average [0.792671835963647] 
+0  ;  -0.5   ; psolve average [0.7722722597306417, 0.779519885316092, 0.7737127068439784] 
+0.3333333333333333  ;  0.3333333   ; psolve average [0] 
+-0.25%  ;  -0.249  % ; psolve average [0.7643205190031036, 0] 
+7.00  ;  7.00   ; psolve average [0.8309090930789301] 
+86417974938787266560.00 mm  ;  0.139 mm  ; psolve average [0.7845939024920486] 
+The energy associated with an alpha particle that has fallen through a potential difference of 4.0 V is 1.2818e-18 J.  ;  1.3  $
+\text { 1-41. } 1.3 \times 10^{-18} \mathrm{~J} / \alpha \text {-particle, }
+$ ; psolve average [0.8433166006749264, 0.8317574630982533] 
+1.01e+16  ;  1.07  $10^{16}$ photons ; psolve average [0.7940788784627433, 0.7942259605388972] 
+The fundamental vibrational frequency of Cl35Cl35 is 5.69 cm^(-1).  ;  556  $\mathrm{~cm}^{-1}$ ; psolve average [0.8279036211372902, 0.8077582358187997] 
+1.99e-15  ;  2  $10^{-15} \mathrm{~J}$ ; psolve average [0.8293206061166357] 
+The ground-state energy of the mesonic atom is -3.9055e-55 kg.  ;  1.69  $10^{-28} \mathrm{~kg}$ ; psolve average [0.8054179375385638, 0.8090125129928459, 0.8164828458591179] 
+1090922590.7561278  ;  1.81  $10^{10} \mathrm{~m}^{-1}$ ; psolve average [0.7706861648985474] 
+The angular position of the first maximum is 0.34 degrees. The distance between the central maximum and the first maximum is 0.20 mm.  ;  12  mm ; psolve average [0.7610305453450344, 0.763617938985956] 
+2.89e+06  ;  3.7 $10^7 \mathrm{~m} \cdot \mathrm{s}^{-1}$  ; psolve average [0.8159935259360792] 
+1.01e-05  ;  1.01  10^{-5} \mathrm{~m} ; psolve average [0.8064080326605206, 0.775085346161751] 
+1.70e+15  ;  1.70  $
+10^{15} \text { photon } \cdot \mathrm{s}^{-1}
+$ ; psolve average [0.8048441949924557, 0.784989410582911] 
+The surface temperature of Sirius is 11146.153846153846 K  ;  11000  $\mathrm{~K}$
+ ; psolve average [0.794130357509542, 0] 
+The energy difference between the absorbed and emitted photons is -1.6347e-18 J.  ;  2   ; psolve average [0.8346807181601047, 0.836008439040388, 0.8073757541484614] 
+ω_e_x_e = 43261140000000.07 cm^(-1)  ;   0.01961   ; psolve average [0.8069463346075484, 0.8144545485161019] 
+2.3417e-12  ;  313  $ \mathrm{~N} \cdot \mathrm{m}^{-1}$ ; psolve average [0.8213164107006241] 
+0.00  ;  1.25  $10^{-3} \%$ ; psolve average [0.7774636214575877, 0.7823665792018334, 0.7525296011831625] 
+The de Broglie wavelength of an electron in the beam is 2.43e-08 meters. The kinetic energy of an electron in the beam is 1.60e-17 J·electron^(-1).  ;  1.602  $10^{-17} \mathrm{~J} \cdot$ electron ${ }^{-1}$ ; psolve average [0.8761175273469166, 0.8407044844543862] 
+
+Correct---------------------------------
+
+0.12  ;  0.123 nm  ; psolve average [0.8911129216379033] 
+3.52e-19  ;  3.52 $10^{-19} \mathrm{~J}$ ; psolve average [0.8314696976821269, 0] 
+0.3333333333333333  ;  0.33333333   ; psolve average [0, 0, 0] 
+2.94e-23 s  ;  2.9 $10^{-23} \mathrm{~s}$  ; psolve average [0.7613909148404812] 
+5269.090909090909  ;  5300  $\mathrm{~K}$
+ ; psolve average [0.7755039711020204] 
+1  ;  1   ; psolve average [0.7761822363382599] 
+0.0819  ;  0.082 V  ; psolve average [0.8756542607869607, 0.8043673798331175] 
+91.35  ;  91.17 nm  ; psolve average [0.8205266462531245, 0.7920255889818474] 
+2532.49  ;  2500 $\mathrm{K}$  ; psolve average [0.8157899390155694, 0.8160409857925096] 
+3.00e+01  ;  3  $10^{-10} \mathrm{~m}$
+ ; psolve average [0.792671835963647] 
+0.3333333333333333  ;  0.3333333   ; psolve average [0] 
+-0.25%  ;  -0.249  % ; psolve average [0.7643205190031036, 0] 
+7.00  ;  7.00   ; psolve average [0.8309090930789301] 
+The energy associated with an alpha particle that has fallen through a potential difference of 4.0 V is 1.2818e-18 J.  ;  1.3  $
+\text { 1-41. } 1.3 \times 10^{-18} \mathrm{~J} / \alpha \text {-particle, }
+$ ; psolve average [0.8433166006749264, 0.8317574630982533] 
+1.99e-15  ;  2  $10^{-15} \mathrm{~J}$ ; psolve average [0.8293206061166357] 
+1.01e-05  ;  1.01  10^{-5} \mathrm{~m} ; psolve average [0.8064080326605206, 0.775085346161751] 
+1.70e+15  ;  1.70  $
+10^{15} \text { photon } \cdot \mathrm{s}^{-1}
+$ ; psolve average [0.8048441949924557, 0.784989410582911] 
+The surface temperature of Sirius is 11146.153846153846 K  ;  11000  $\mathrm{~K}$
+ ; psolve average [0.794130357509542, 0] 
+The de Broglie wavelength of an electron in the beam is 2.43e-08 meters. The kinetic energy of an electron in the beam is 1.60e-17 J·electron^(-1).  ;  1.602  $10^{-17} \mathrm{~J} \cdot$ electron ${ }^{-1}$ ; psolve average [0.8761175273469166, 0.8407044844543862] 

@@ -1,0 +1,125 @@
+**EXAMPLE 1:**
+Problem:
+Assume that all gases are perfect and that data refer to 298.15 K unless otherwise stated. Calculate the change in chemical potential of a perfect gas when its pressure is increased isothermally from $1.8 \\mathrm{~atm}$ to $29.5 \\mathrm{~atm}$ at $40^{\\circ} \\mathrm{C}$. The unit of the answer is $\\mathrm{kJ} \\mathrm{mol}^{-1}$.
+
+Response:
+In order to solve this problem, we will use the formula for the change in chemical potential \( \Delta \mu \) of a perfect gas due to a change in pressure. Given that the temperature is constant (isothermal), the chemical potential of a perfect gas is given by:
+
+**Formula retrieval:**
+\[ \text{[Formula 1]} \quad \Delta \mu = RT \ln\left(\frac{P_2}{P_1}\right) \]
+where:
+- \( \Delta \mu \) is the change in chemical potential,
+- \( R \) is the universal gas constant (\( 8.314 \, \text{J} \, \text{mol}^{-1} \, \text{K}^{-1} \)),
+- \( T \) is the absolute temperature in Kelvin,
+- \( P_1 \) is the initial pressure,
+- \( P_2 \) is the final pressure.
+
+**Reasoning/calculation process:**
+[step 1] Convert the temperature from Celsius to Kelvin. To convert from Celsius to Kelvin, we add 273.15 to the Celsius temperature.
+\[ T = 40^{\circ} \text{C} + 273.15 \, \text{K} \]
+\[ T = 313.15 \, \text{K} \]
+
+[step 2] Substitute the given values into the formula.
+\[ P_1 = 1.8 \, \text{atm} \]
+\[ P_2 = 29.5 \, \text{atm} \]
+
+\[ \Delta \mu = 8.314 \, \text{J} \, \text{mol}^{-1} \, \text{K}^{-1} \cdot 313.15 \, \text{K} \cdot \ln\left(\frac{29.5 \, \text{atm}}{1.8 \, \text{atm}}\right) \]
+
+[step 3] Calculate the natural logarithm and proceed with the calculation.
+\[ \Delta \mu = 8.314 \, \text{J} \, \text{mol}^{-1} \, \text{K}^{-1} \cdot 313.15 \, \text{K} \cdot \ln(16.389) \]
+\[ \Delta \mu = 8.314 \, \text{J} \, \text{mol}^{-1} \, \text{K}^{-1} \cdot 313.15 \, \text{K} \cdot 2.799 \]
+\[ \Delta \mu = 7293.269 \, \text{J} \, \text{mol}^{-1} \]
+
+[step 4] Convert the result from Joules per mole to kilojoules per mole (1 kJ = 1000 J).
+\[ \Delta \mu = 7.293 \, \text{kJ} \, \text{mol}^{-1} \]
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# Constants
+R = 8.314  # J/(mol·K)
+T = 40 + 273.15  # Convert temperature from °C to K
+
+# Pressures in atm, converted to Pa (1 atm = 101325 Pa)
+P1 = 1.8 * 101325
+P2 = 29.5 * 101325
+
+# Calculate the change in chemical potential (Δμ = μ2 - μ1)
+# Using the formula: Δμ = RT ln(P2/P1)
+delta_mu = R * T * np.log(P2 / P1)
+
+# Convert Δμ from J/mol to kJ/mol
+delta_mu_kJ = delta_mu / 1000
+print("The change in chemical potential of the perfect gas when its pressure is increased isothermally from 1.8 atm to 29.5 atm at 40°C is approximately ",delta_mu_kJ," \(\text{kJ mol}^{-1}\).")
+```
+
+
+**EXAMPLE 2:**
+Problem:
+The standard potential of the cell $\\mathrm{Pt}(\\mathrm{s})\\left|\\mathrm{H}_2(\\mathrm{~g})\\right| \\mathrm{HBr}(\\mathrm{aq})|\\operatorname{AgBr}(\\mathrm{s})| \\mathrm{Ag}(\\mathrm{s})$ was measured over a range of temperatures, and the data were found to fit the following polynomial:\r\n$$\r\nE_{\\text {cell }}^{\\bullet} / \\mathrm{V}=0.07131-4.99 \\times 10^{-4}(T / \\mathrm{K}-298)-3.45 \\times 10^{-6}(\\mathrm{~T} / \\mathrm{K}-298)^2\r\n$$\r\nThe cell reaction is $\\operatorname{AgBr}(\\mathrm{s})+\\frac{1}{2} \\mathrm{H}_2(\\mathrm{~g}) \\rightarrow \\mathrm{Ag}(\\mathrm{s})+\\mathrm{HBr}(\\mathrm{aq})$. Evaluate the standard reaction Gibbs energy, enthalpy, and entropy at $298 \\mathrm{~K}$.\r\n
+
+Response:
+In order to solve this problem, we need to compute the standard reaction Gibbs energy (\(\Delta_{\mathrm{r}} G^{\ominus}\)), the standard reaction entropy (\(\Delta_{\mathrm{r}} S^{\ominus}\)), and the standard reaction enthalpy (\(\Delta_{\mathrm{r}} H^{\ominus}\)) at \(T = 298 \, \mathrm{K}\) for the given cell reaction.
+
+**Formulae retrieval:**
+\[ \text{[Formula 1]} \quad \Delta_{\mathrm{r}} G^{\ominus} = -nFE^{\ominus} \]
+\[ \text{[Formula 2]} \quad \frac{\mathrm{d}E_{\mathrm{cell}}^{\ominus}}{\mathrm{d}T} = -4.99 \times 10^{-4} \, \mathrm{V/K} - 2 \times 3.45 \times 10^{-6} (T/\mathrm{K} - 298) \, \mathrm{V/K} \]
+\[ \text{[Formula 3]} \quad \Delta_{\mathrm{r}} S^{\ominus} = nF \frac{\mathrm{d}E_{\mathrm{cell}}^{\ominus}}{\mathrm{d}T} \]
+\[ \text{[Formula 4]} \quad \Delta_{\mathrm{r}} H^{\ominus} = \Delta_{\mathrm{r}} G^{\ominus} + T \Delta_{\mathrm{r}} S^{\ominus} \]
+where:
+- \( n \) is the number of moles of electrons transferred in the reaction (1 mole of electrons for the given reaction),
+- \( F \) is the Faraday constant (\( 96485 \, \mathrm{C/mol} \)),
+- \( E^{\ominus} \) is the standard cell potential,
+- \( T \) is the absolute temperature in Kelvin.
+
+**Reasoning/calculation process:**
+[step 1] Calculate the standard reaction Gibbs energy using the standard cell potential.
+\[ E^{\ominus} = 0.07131 \, \mathrm{V} \]
+\[ \Delta_{\mathrm{r}} G^{\ominus} = -(1) \times 96485 \times 0.07131 \]
+\[ \Delta_{\mathrm{r}} G^{\ominus} = -6880 \, \mathrm{J/mol} \] (converted to kJ/mol later)
+
+[step 2] Evaluate the temperature coefficient of the cell potential (\(\frac{\mathrm{d}E_{\mathrm{cell}}^{\ominus}}{\mathrm{d}T}\)) at \( T = 298 \, \mathrm{K} \).
+\[ \frac{\mathrm{d}E_{\mathrm{cell}}^{\ominus}}{\mathrm{d}T} = -4.99 \times 10^{-4} \]
+
+[step 3] Calculate the standard reaction entropy using the temperature coefficient.
+\[ \Delta_{\mathrm{r}} S^{\ominus} = 1 \times 96485 \times (-4.99 \times 10^{-4}) \]
+\[ \Delta_{\mathrm{r}} S^{\ominus} = -48.1 \, \mathrm{J/K/mol} \]
+
+[step 4] Compute the standard reaction enthalpy.
+\[ \Delta_{\mathrm{r}} H^{\ominus} = -6880 + 298 \times (-0.0481) \]
+\[ \Delta_{\mathrm{r}} H^{\ominus} = -7212 \, \mathrm{J/mol} \] (converted to kJ/mol later)
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# Constants
+F = 96485  # C/mol
+T = 298  # K
+
+# Standard cell potential
+E_cell_std = 0.07131  # V
+
+# Calculate ΔrG° (in J/mol)
+delta_G_std = -F * E_cell_std  # J/mol
+
+# Temperature coefficient of E_cell (V/K)
+dE_dT = -4.99e-4  # V/K
+
+# Calculate ΔrS° (in J/K/mol)
+delta_S_std = F * dE_dT  # J/K/mol
+
+# Calculate ΔrH° (in J/mol)
+delta_H_std = delta_G_std + T * delta_S_std  # J/mol
+
+# Convert ΔrG°, ΔrS°, and ΔrH° from J to kJ
+delta_G_std_kJ = delta_G_std / 1000  # kJ/mol
+delta_S_std_kJ = delta_S_std / 1000  # kJ/K/mol
+delta_H_std_kJ = delta_H_std / 1000  # kJ/mol
+
+# Output results
+print(f"Standard reaction Gibbs energy: {delta_G_std_kJ:.4f} kJ/mol")
+print(f"Standard reaction entropy: {delta_S_std_kJ:.4f} kJ/K/mol")
+print(f"Standard reaction enthalpy: {delta_H_std_kJ:.4f} kJ/mol")
+```

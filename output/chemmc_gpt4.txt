@@ -1,0 +1,95 @@
+-----------------------------------
+total task's number: 39
+correct solved tasks: 27
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.6923076923076923
+accuracy (full): 0.6923076923076923
+
+
+-----------------------------------
+
+0.122643 nm  ;  0.123 nm  ; psolve average [0, 0, 0] 
+3.522067e-19 J  ;  3.52 $10^{-19} \mathrm{~J}$ ; psolve average [0, 0] 
+1.4999999999999998  ;  1.5   ; psolve average [0, 0] 
+0.3333333333333333  ;  0.33333333   ; psolve average [0, 0] 
+The minimum lifetime of the pion is 2.944920e-23 seconds.  ;  2.9 $10^{-23} \mathrm{~s}$  ; psolve average [0, 0] 
+5268.68 K  ;  5300  $\mathrm{~K}$
+ ; psolve average [0, 0] 
+1.0  ;  1   ; psolve average [0, 0, 0] 
+0.081917 V  ;  0.082 V  ; psolve average [0, 0] 
+4.789658e+02 N/m  ;  479 $\mathrm{~N} \cdot \mathrm{m}^{-1}$  ; psolve average [0, 0] 
+The initial energy level of the electron is 2.957937.  ;  3   ; psolve average [0, 0, 0] 
+4.740834e+14 Hz  ;  4.738 $10^{14} \mathrm{~Hz}$  ; psolve average [0, 0] 
+5.272859e-24 kg*m/s  ;   6.6  $10^{-23} \mathrm{~kg} \cdot \mathrm{m} \cdot \mathrm{s}^{-1}$ ; psolve average [0, 0] 
+54.400000 eV | 5248.784000 kJ/mol  ;  54.394 $\mathrm{eV}$  ; psolve average [0, 0, 0] 
+The uncertainty in the energy of the gamma ray produced is 0.00032913185878 eV.  ;  7 $10^{-22} \mathrm{~J}$  ; psolve average [0, 0] 
+The wavelength is 91.126718 nm and the energy is 13.616181 eV.  ;  91.17 nm  ; psolve average [0, 0] 
+The uncertainty in the energy of the excited state is 5.272859e-26 J.  ;  7  $10^{-25} \mathrm{~J}$ ; psolve average [0, 0, 0] 
+2531.462454 K  ;  2500 $\mathrm{K}$  ; psolve average [0, 0] 
+2.897773e-10 m  ;  3  $10^{-10} \mathrm{~m}$
+ ; psolve average [0, 0] 
+The task has not been completed successfully so there is no final answer.  ;  -0.5   ; psolve average [0, 0, 0] 
+0.3333333333333333  ;  0.3333333   ; psolve average [0, 0] 
+0.249170 %  ;  -0.249  % ; psolve average [0, 0] 
+7.000000 atomic mass units  ;  7.00   ; psolve average [0] 
+0.138860 mm  ;  0.139 mm  ; psolve average [0, 0, 0] 
+The energy of the alpha particle is 1.281741e-18 J and the wavelength is 5.078750e-12 m.  ;  1.3  $
+\text { 1-41. } 1.3 \times 10^{-18} \mathrm{~J} / \alpha \text {-particle, }
+$ ; psolve average [0, 0] 
+The number of photons in the light pulse is 1.066492e+16.  ;  1.07  $10^{16}$ photons ; psolve average [0, 0, 0] 
+$5.562259e+02$ cm$^{-1}$  ;  556  $\mathrm{~cm}^{-1}$ ; psolve average [0, 0] 
+1.987821e-15 J  ;  2  $10^{-15} \mathrm{~J}$ ; psolve average [0, 0, 0] 
+The reduced mass of a mesonic atom is 1.694600e-28 kg. The ground state energy is -1.027187e-17 Joules. The radius of the first Bohr orbit is 5.291772e-11 m. The energy of the n=1 to n=2 transition is 1.020000e+01 eV and its frequency is 2.466349e+15 Hz.  ;  1.69  $10^{-28} \mathrm{~kg}$ ; psolve average [0, 0, 0] 
+The value of beta is 2.337982e-02 m^-1.  ;  1.81  $10^{10} \mathrm{~m}^{-1}$ ; psolve average [0, 0, 0] 
+The angular position of the first maximum in the interference pattern is 0.006000 radians. The distance between the central maximum and the first maximum on the detector is 12.000144 mm.  ;  12  mm ; psolve average [0, 0] 
+The uncertainty in the speed of the electron is approximately 2.89e+06 m/s.  ;  3.7 $10^7 \mathrm{~m} \cdot \mathrm{s}^{-1}$  ; psolve average [0, 0, 0] 
+1.006171e-05 m  ;  1.01  10^{-5} \mathrm{~m} ; psolve average [0] 
+1.6953e+15 photon/s  ;  1.70  $
+10^{15} \text { photon } \cdot \mathrm{s}^{-1}
+$ ; psolve average [0, 0, 0] 
+11145.28 K  ;  11000  $\mathrm{~K}$
+ ; psolve average [0, 0] 
+The final state of the hydrogen atom is n = 2.003398.  ;  2   ; psolve average [0, 0] 
+The value of xe is 9.760762e-20 mol/J and the value of ωe.χe is 2.816956e-16 cm^-1.mol/J.  ;   0.01961   ; psolve average [0, 0] 
+3.140900e+02 N/m  ;  313  $ \mathrm{~N} \cdot \mathrm{m}^{-1}$ ; psolve average [0, 0, 0] 
+0.001245841135427786 %  ;  1.25  $10^{-3} \%$ ; psolve average [0, 0, 0] 
+The wavelength of an electron in an electron beam accelerated by a potential difference of 100V is 1.226426e-10 m and the kinetic energy is 1.602177e-17 J per electron.  ;  1.602  $10^{-17} \mathrm{~J} \cdot$ electron ${ }^{-1}$ ; psolve average [0, 0] 
+
+-----------------------------------
+
+0.122643 nm  ;  0.123 nm  ; psolve average [0, 0, 0] 
+3.522067e-19 J  ;  3.52 $10^{-19} \mathrm{~J}$ ; psolve average [0, 0] 
+1.4999999999999998  ;  1.5   ; psolve average [0, 0] 
+0.3333333333333333  ;  0.33333333   ; psolve average [0, 0] 
+The minimum lifetime of the pion is 2.944920e-23 seconds.  ;  2.9 $10^{-23} \mathrm{~s}$  ; psolve average [0, 0] 
+5268.68 K  ;  5300  $\mathrm{~K}$
+ ; psolve average [0, 0] 
+1.0  ;  1   ; psolve average [0, 0, 0] 
+0.081917 V  ;  0.082 V  ; psolve average [0, 0] 
+The initial energy level of the electron is 2.957937.  ;  3   ; psolve average [0, 0, 0] 
+4.740834e+14 Hz  ;  4.738 $10^{14} \mathrm{~Hz}$  ; psolve average [0, 0] 
+54.400000 eV | 5248.784000 kJ/mol  ;  54.394 $\mathrm{eV}$  ; psolve average [0, 0, 0] 
+The wavelength is 91.126718 nm and the energy is 13.616181 eV.  ;  91.17 nm  ; psolve average [0, 0] 
+2531.462454 K  ;  2500 $\mathrm{K}$  ; psolve average [0, 0] 
+2.897773e-10 m  ;  3  $10^{-10} \mathrm{~m}$
+ ; psolve average [0, 0] 
+0.3333333333333333  ;  0.3333333   ; psolve average [0, 0] 
+7.000000 atomic mass units  ;  7.00   ; psolve average [0] 
+0.138860 mm  ;  0.139 mm  ; psolve average [0, 0, 0] 
+The energy of the alpha particle is 1.281741e-18 J and the wavelength is 5.078750e-12 m.  ;  1.3  $
+\text { 1-41. } 1.3 \times 10^{-18} \mathrm{~J} / \alpha \text {-particle, }
+$ ; psolve average [0, 0] 
+The number of photons in the light pulse is 1.066492e+16.  ;  1.07  $10^{16}$ photons ; psolve average [0, 0, 0] 
+1.987821e-15 J  ;  2  $10^{-15} \mathrm{~J}$ ; psolve average [0, 0, 0] 
+The reduced mass of a mesonic atom is 1.694600e-28 kg. The ground state energy is -1.027187e-17 Joules. The radius of the first Bohr orbit is 5.291772e-11 m. The energy of the n=1 to n=2 transition is 1.020000e+01 eV and its frequency is 2.466349e+15 Hz.  ;  1.69  $10^{-28} \mathrm{~kg}$ ; psolve average [0, 0, 0] 
+The angular position of the first maximum in the interference pattern is 0.006000 radians. The distance between the central maximum and the first maximum on the detector is 12.000144 mm.  ;  12  mm ; psolve average [0, 0] 
+1.006171e-05 m  ;  1.01  10^{-5} \mathrm{~m} ; psolve average [0] 
+1.6953e+15 photon/s  ;  1.70  $
+10^{15} \text { photon } \cdot \mathrm{s}^{-1}
+$ ; psolve average [0, 0, 0] 
+11145.28 K  ;  11000  $\mathrm{~K}$
+ ; psolve average [0, 0] 
+The final state of the hydrogen atom is n = 2.003398.  ;  2   ; psolve average [0, 0] 
+The wavelength of an electron in an electron beam accelerated by a potential difference of 100V is 1.226426e-10 m and the kinetic energy is 1.602177e-17 J per electron.  ;  1.602  $10^{-17} \mathrm{~J} \cdot$ electron ${ }^{-1}$ ; psolve average [0, 0] 
+
+-----------------------------------

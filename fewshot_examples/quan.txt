@@ -1,0 +1,103 @@
+**EXAMPLE 1:**
+Problem:
+A one-particle, one-dimensional system has $\\Psi=a^{-1 / 2} e^{-|x| / a}$ at $t=0$, where $a=1.0000 \\mathrm{~nm}$. At $t=0$, the particle's position is measured.  (b) Find the probability that the measured value is between $x=0$ and $x=2 \\mathrm{~nm}$.
+
+Response:
+To solve this quantum mechanics problem involving the wavefunction of a particle and its probability distribution, we need to compute the probability that the particle's position, when measured, lies within a specified range. The integral of the square of the wavefunction over this range will provide the desired probability.
+
+**Formulae retrieval:**
+\[ \text{[Formula 1]} \quad \text{Probability} = \int_{x_1}^{x_2} |\Psi(x, t=0)|^2 \, dx \]
+Where:
+- \( |\Psi(x, t=0)|^2 \) is the square of the absolute value of the wavefunction at time \( t = 0 \),
+- \( x_1 \) and \( x_2 \) are the limits between which the probability is to be calculated.
+
+**Reasoning/calculation process:**
+[step 1] Express the wavefunction \( \Psi(x) = a^{-1/2} e^{-|x|/a} \). Since \( a = 1 \, \text{nm} \), the wavefunction becomes \( \Psi(x) = 1^{-1/2} e^{-|x|} \).
+
+[step 2] Calculate the square of the absolute value of the wavefunction, which is necessary to find the probability.
+\[ |\Psi(x)|^2 = \left(a^{-1/2} e^{-|x|/a}\right)^2 = (1^{-1/2} e^{-|x|})^2 = e^{-2|x|} \]
+
+[step 3] Compute the integral of \( |\Psi(x)|^2 \) from \( x = 0 \) to \( x = 2 \, \text{nm} \).
+\[ \text{Probability} = \int_{0}^{2} e^{-2x} \, dx \]
+
+[step 4] Evaluate the definite integral using basic calculus or a computational tool.
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# Define the limits of integration
+x1 = 0
+x2 = 2
+
+# Define the integrand function
+integrand = lambda x: np.exp(-2 * x)
+
+# Use numpy's numerical integration function to compute the integral
+probability = np.trapz([integrand(x) for x in np.linspace(x1, x2, 1000)], np.linspace(x1, x2, 1000))
+print(f"The probability that the particle's position is measured between x=0 and x=2 nm is approximately {probability:.6f}.")
+```
+
+
+**EXAMPLE 2:**
+Problem:
+The strongest infrared band of ${ }^{12} \\mathrm{C}^{16} \\mathrm{O}$ occurs at $\\widetilde{\\nu}=2143 \\mathrm{~cm}^{-1}$. Find the force constant of ${ }^{12} \\mathrm{C}^{16} \\mathrm{O}$. 
+
+Response:
+To solve the problem of finding the force constant for \( ^{12}C^{16}O \) from its strongest infrared band, we need to consider the formula for the vibrational frequency of a diatomic molecule and relate it to the force constant.
+
+**Formula retrieval:**
+\[ \text{[Formula 1]} \quad \tilde{\nu} = \frac{1}{2\pi}\sqrt{\frac{k}{\mu}} \]
+where:
+- \( \tilde{\nu} \) is the wavenumber of the vibrational frequency,
+- \( k \) is the force constant,
+- \( \mu \) is the reduced mass of the molecule,
+- \( \mu = \frac{m_1 \cdot m_2}{m_1 + m_2} \),
+- \( m_1 \) and \( m_2 \) are the masses of the two atoms in the molecule.
+
+**Reasoning/calculation process:**
+[step 1] Calculate the reduced mass \( \mu \) of \( ^{12}C^{16}O \).
+Given the atomic masses of Carbon (\( m_C = 12 \) u) and Oxygen (\( m_O = 16 \) u):
+\[ \mu = \frac{m_C \cdot m_O}{m_C + m_O} = \frac{12 \times 16}{12 + 16} \]
+\[ \mu = \frac{192}{28} \]
+
+[step 2] Convert \( \mu \) from atomic mass units (u) to kg (1 u = \( 1.660539 \times 10^{-27} \) kg):
+\[ \mu = \frac{192}{28} \times 1.660539 \times 10^{-27} \, \text{kg} \]
+
+[step 3] Convert the wavenumber \( \tilde{\nu} \) to frequency \( \nu \) (since \( \nu = \tilde{\nu} \cdot c \), and \( c = 3 \times 10^8 \) m/s is the speed of light):
+\[ \nu = 2143 \times 10^2 \, \text{m}^{-1} \times 3 \times 10^{10} \, \text{cm/s} \]
+
+[step 4] Substitute \( \nu \) and \( \mu \) into the formula to solve for \( k \):
+\[ k = (2\pi\nu)^2 \cdot \mu \]
+\[ k = (2\pi \cdot \nu)^2 \cdot \mu \]
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# constants
+c = 2.99792458e10  # More accurate speed of light in cm/s
+u_to_kg = 1.66053906660e-27  # More accurate atomic mass unit conversion to kg
+
+# Given values
+v_wave_number = 2143  # in cm^-1
+
+# Convert wave number to frequency
+v_frequency = v_wave_number * c
+
+# Atomic masses in atomic mass units (u)
+m_C = 12  # Carbon
+m_O = 16  # Oxygen
+
+# Recalculate the reduced mass
+mu_precise = (m_C * m_O) / (m_C + m_O) * u_to_kg
+
+# Constants for the formula
+pi = np.pi
+
+# Recalculate the force constant k with increased precision
+k = (2 * np.pi * v_wave_number * c) ** 2 * mu_precise
+
+# Output the force constant
+print(f"The force constant for ^12C^16O is approximately {k:.4e} N/m.")
+```

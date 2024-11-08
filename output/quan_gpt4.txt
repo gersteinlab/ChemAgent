@@ -1,0 +1,60 @@
+total task's number: 34
+correct solved tasks: 14
+evaluation failed tasks: 0
+accuracy (not consider evaluation failed ones): 0.4117647058823529
+accuracy (full): 0.4117647058823529
+
+
+-----------------------------------
+
+1.827 eV  ;  15.425  $\mathrm{eV}$ ; psolve average [0.8213262222423744, 0.8288632243654052] 
+-0.968728710656876 kJ/mol  ;  399  $\mathrm{~kJ} / \mathrm{mol}$ ; psolve average [0.808916603005013, 0.8163964410575678] 
+1.4535397875239056e-35 J s  ;  9.13  $10^{-35} \mathrm{~J} \mathrm{~s}$ ; psolve average [0.8017366322583692, 0.8225116216105232, 0.8251675536490121] 
+1.5158753410828745e+19 eV  ;  2.5151  $\mathrm{eV}$ ; psolve average [0.8235522699340937, 0.8190055044765803, 0.8489179086691762] 
+-6.803381533270216 eV  ;   -6.8 $\mathrm{eV}$ ; psolve average [0.7923608279953501, 0.8000218779791696, 0.8914962277150505] 
+A 't' orbital does not exist in standard atomic orbital nomenclature.  ;  14   ; psolve average [0.8126786735875422, 0.8042041935828713] 
+3  ;  15   ; psolve average [0.8106810934676885, 0.8012081403185992] 
+26.98 kcal/mol  ;  27  $\mathrm{kcal} / \mathrm{mol}$ ; psolve average [0.8124569088018899, 0.8072167403998564] 
+1.7848278749698054 nm  ;  1.8 $\mathrm{~nm}$ ; psolve average [0.8260918595135723, 0.8244812504403547, 0.8121981781420318] 
+0.06967761492922456  ;  0.16   ; psolve average [0.8160915622917203, 0.7907314445539546] 
+0.3323961 nm  ;  0.332 $\mathrm{~nm}$ ; psolve average [0.8044933222828078, 0.8274727279313975, 0.8097782166130362] 
+0.0 degrees  ;  54.7  $^{\circ}$ ; psolve average [0.7832402758102243, 0.7946615039719663, 0.7499063613287548] 
+-14716.150317000001 kcal/mol  ;  -59.24  $\mathrm{kcal} / \mathrm{mol}$ ; psolve average [0.8249201282216921, 0.8265424080688414, 0.838347137094997] 
+4.75 eV  ;   -31.95  $\mathrm{eV}$ ; psolve average [0.8236450745685575] 
+The corresponding energy in eV is approximately 1.169064e-01 eV.  ;   4.56  $\mathrm{eV}$ ; psolve average [0.8192392945280175, 0.8071164135532433] 
+The number of CSFs in a full CI calculation of CH2SiHF using a 6-31G** basis set is approximately 2.147484e-19 * 10^28.  ;  1.86 $10^{28} $ ; psolve average [0.7794991799514824, 0.7728895261459326, 0.7441842777230113] 
+The ratio of the electrical and gravitational forces between a proton and an electron is: 2.2686614794312705 x 10^39  ;  2.4  $10^{39}$ ; psolve average [0.827838333009549, 0.823912222691706, 0.8060178362492155] 
+The probability of locating the particle between the given points could not be calculated due to failed estimation.  ;  0.000216   ; psolve average [0.7755839603950377, 0.7573264450192907, 0.8378492966637641] 
+The probability that the measured value of the system lies between x = 2.0000 Å and x = 2.0010 Å is approximately 49.782090 * 10^-6.  ;  0.000216   ; psolve average [0.7925051680643321, 0.8103554455307219, 0.8469742829351034] 
+1390.4 GHz  ;   252.8  $\mathrm{GHz}$ ; psolve average [0.8415431088833327, 0.8192142119341591, 0.8023474476214939] 
+The execution of one of the subtasks failed, hence an accurate final answer could not be obtained.  ;  1.2  $10^{-8} \mathrm{eV}$ ; psolve average [0.808772964822464, 0.8115533808225157, 0.8366916655452904] 
+7.5770e+14 s^-1  ;  7.58  $10^{14} \mathrm{~s}^{-1}$ ; psolve average [0.8214624027294662, 0.858938538814173, 0.8353719950692996] 
+The dipole moment of the optimized structure is approximately 0.000000e+00 D.  ;  1.41  $\mathrm{D}$ ; psolve average [0.765608332105621, 0.8061734136473472] 
+The coefficient of Φ0 in the normalized CI-SD wave function is: 1.0014062014263776  ;  0.9731   ; psolve average [0.8418501565767014] 
+1.0  ;  1   ; psolve average [0.7557163898522324, 0.7709647634097795, 0.7550537325293977] 
+0.40502028141285434 N  ;  0.405  $\mathrm{~N}$ ; psolve average [0.8145820742344712] 
+3.874874689447447  ;  4  ; psolve average [0.749203630791126, 0.8278708590322351, 0.8487963889752196] 
+3.0183803592843037 x 10^26  ;  3 $10^{26}$ ; psolve average [0.8020414862222088, 0.8183033290431521, 0.8255283902230431] 
+The ΔH0 for the reaction H2(g) → 2 H(g) is 432.069 kJ/mol.  ;  432.07  $\mathrm{~kJ} / \mathrm{mol}$ ; psolve average [0.795688372758379, 0.8413830549433182, 0.8181575975005702] 
+0.14142122358683762 kJ/mol  ;  0.14  $\mathrm{kJ} / \mathrm{mol}$ ; psolve average [0.8356367525671416, 0.8162305603266632] 
+The magnitude of the spin magnetic moment of an electron is: 1.606305664552142e-23 J/T  ;  1.61  $10^{-23} \mathrm{~J} / \mathrm{T}$ ; psolve average [0.8290119944620965, 0.8570978256099199, 0.8266394440088264] 
+10 eV  ;  3.333333333  $\mathrm{eV}$ ; psolve average [0.8065561849453812, 0.797396568553142, 0.7633153217500027] 
+0.056 nm  ;  0.264 $\mathrm{~nm}$ ; psolve average [0.7640662622719816, 0.7800976427801615] 
+0.0 J.s  ;  0   ; psolve average [0.82263839178332, 0.8320934980097109] 
+
+Correct---------------------------------
+
+-6.803381533270216 eV  ;   -6.8 $\mathrm{eV}$ ; psolve average [0.7923608279953501, 0.8000218779791696, 0.8914962277150505] 
+26.98 kcal/mol  ;  27  $\mathrm{kcal} / \mathrm{mol}$ ; psolve average [0.8124569088018899, 0.8072167403998564] 
+1.7848278749698054 nm  ;  1.8 $\mathrm{~nm}$ ; psolve average [0.8260918595135723, 0.8244812504403547, 0.8121981781420318] 
+0.3323961 nm  ;  0.332 $\mathrm{~nm}$ ; psolve average [0.8044933222828078, 0.8274727279313975, 0.8097782166130362] 
+7.5770e+14 s^-1  ;  7.58  $10^{14} \mathrm{~s}^{-1}$ ; psolve average [0.8214624027294662, 0.858938538814173, 0.8353719950692996] 
+The coefficient of Φ0 in the normalized CI-SD wave function is: 1.0014062014263776  ;  0.9731   ; psolve average [0.8418501565767014] 
+1.0  ;  1   ; psolve average [0.7557163898522324, 0.7709647634097795, 0.7550537325293977] 
+0.40502028141285434 N  ;  0.405  $\mathrm{~N}$ ; psolve average [0.8145820742344712] 
+3.874874689447447  ;  4  ; psolve average [0.749203630791126, 0.8278708590322351, 0.8487963889752196] 
+3.0183803592843037 x 10^26  ;  3 $10^{26}$ ; psolve average [0.8020414862222088, 0.8183033290431521, 0.8255283902230431] 
+The ΔH0 for the reaction H2(g) → 2 H(g) is 432.069 kJ/mol.  ;  432.07  $\mathrm{~kJ} / \mathrm{mol}$ ; psolve average [0.795688372758379, 0.8413830549433182, 0.8181575975005702] 
+0.14142122358683762 kJ/mol  ;  0.14  $\mathrm{kJ} / \mathrm{mol}$ ; psolve average [0.8356367525671416, 0.8162305603266632] 
+The magnitude of the spin magnetic moment of an electron is: 1.606305664552142e-23 J/T  ;  1.61  $10^{-23} \mathrm{~J} / \mathrm{T}$ ; psolve average [0.8290119944620965, 0.8570978256099199, 0.8266394440088264] 
+0.0 J.s  ;  0   ; psolve average [0.82263839178332, 0.8320934980097109] 

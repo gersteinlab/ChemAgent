@@ -1,0 +1,71 @@
+
+api_keys:
+  embedding:
+    - api_key: 
+      api_base: 
+      api_type: 
+      api_version: 
+      engine:
+  gpt-3.5-turbo-16k:
+    - api_key: 
+      api_base: 
+      api_type: 
+      api_version: 
+      engine: 
+  gpt-4:
+    - api_key: 
+      api_base: 
+      api_type: 
+      api_version:
+      engine: 
+
+
+
+default_request_type: openai # or xagent or llama
+default_completion_kwargs:
+  model: gpt-3.5-turbo-16k
+  eva_model: gpt-4
+  temperature: 0.2
+  request_timeout: 60
+
+enable_summary: true
+summary:
+  single_action_max_length: 2048
+  max_return_length: 12384
+
+
+max_retry_times: 4
+max_subtask_chain_length: 4
+
+max_plan_refine_chain_length: 3
+max_plan_tree_depth: 3
+max_plan_tree_width: 4
+max_plan_length: 8192
+
+enable_ask_human_for_help: False
+
+record_dir:
+
+experiment:
+  redo_action: false
+
+traj_score_threshold: 0.7
+plan_score_threshold: 0.7
+dsolve_threshold: 0.7
+pool_id: 418103
+subjects: ["gas laws", "thermodynamics", "photochemistry", "electrostatics", "spectroscopy", "molecular chemistry", "atomic chemistry", "quantum mechanics", "solid-state chemistry", "magnetic properties", "electrochemistry", "particle physics", "atomic physics", "fluid mechanics", "calorimetry", "statistical mechanics"]  
+memory_insert: True
+save_dir: "./memory/exec_memory/storage_matter_gpt4"
+plan_save_dir: "./memory/plan_memory/plan_storage_matter_gpt4"
+score: False
+refine: False
+exec_topk: 3
+
+engine: gpt # or gpt
+
+image: True
+imagination_threshold: 0.9
+
+eva_model: gpt-4
+
+web_search: False

@@ -1,0 +1,84 @@
+**EXAMPLE 1:**
+Problem:
+Given that the work function for sodium metal is $2.28 \\mathrm{eV}$, what is the threshold frequency $v_0$ for sodium? The unit of the answer is $\\mathrm{~Hz}$.
+
+Response:
+To solve the problem of finding the threshold frequency \( \nu_0 \) for sodium given its work function, we will use the relation between work function, frequency, and the Planck constant.
+
+**Formula retrieval:**
+\[ \text{[Formula 1]} \quad \Phi = h \nu_0 \]
+where:
+- \( \Phi \) is the work function in electron-volts (eV),
+- \( h \) is the Planck constant (\( 4.135667696 \times 10^{-15} \, \text{eV} \cdot \text{s} \)),
+- \( \nu_0 \) is the threshold frequency in hertz (Hz).
+
+**Reasoning/calculation process:**
+[step 1] Convert the work function from eV to Joules (1 eV = \( 1.60218 \times 10^{-19} \) Joules). However, since the calculation will be in terms of electron volts directly and we are given the value of Planck's constant in eV·s, we can proceed with eV directly.
+
+\[ \Phi = 2.28 \, \text{eV} \]
+
+[step 2] Use the formula for the threshold frequency:
+\[ \nu_0 = \frac{\Phi}{h} \]
+
+\[ \nu_0 = \frac{2.28 \, \text{eV}}{4.135667696 \times 10^{-15} \, \text{eV} \cdot \text{s}} \]
+
+[step 3] Perform the division to find the threshold frequency.
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# Constants
+work_function = 2.28  # in eV
+planck_constant = 4.135667696e-15  # in eV·s
+
+# Calculate the threshold frequency (v_0 = Work function / Planck constant)
+threshold_frequency = work_function / planck_constant  # in Hz
+
+print(f"The threshold frequency for sodium is {threshold_frequency:.6e} Hz.")
+```
+
+
+**EXAMPLE 2:**
+Problem:
+Calculate the de Broglie wavelength of an electron traveling at $1.00 \\%$ of the speed of light. The unit of the answer is $\\mathrm{pm}$ .
+
+Response:
+To solve the problem of calculating the de Broglie wavelength of an electron traveling at \(1.00\%\) of the speed of light, we will use the de Broglie wavelength formula, which relates the momentum of a particle to its wavelength.
+
+**Formulae retrieval:**
+\[ \text{[Formula 1]} \quad \lambda = \frac{h}{p} \]
+where:
+- \( \lambda \) is the de Broglie wavelength,
+- \( h \) is Planck's constant (\(6.626 \times 10^{-34} \, \text{Js}\)),
+- \( p \) is the momentum of the particle.
+
+**Reasoning/calculation process:**
+[step 1] Calculate the velocity of the electron as a fraction of the speed of light.
+\[ v = 0.01c \]
+where \( c \) is the speed of light (\(3.00 \times 10^{8} \, \text{m/s}\)).
+
+[step 2] Compute the relativistic momentum of the electron using the formula \( p = \frac{m_e v}{\sqrt{1 - \left(\frac{v}{c}\right)^2}} \).
+Here, \( m_e \) is the mass of the electron (\(9.109 \times 10^{-31} \, \text{kg}\)).
+
+[step 3] Substitute the values into the de Broglie wavelength formula.
+\[ \lambda = \frac{h}{\frac{m_e \cdot 0.01c}{\sqrt{1 - (0.01)^2}}} \]
+
+**Answer conclusion:**
+[answer]: ```python
+import numpy as np
+
+# More precise constants
+h = 6.62607015e-34  # Planck's constant (Js), more precise value
+c = 2.99792458e8    # Speed of light (m/s), exact value
+me = 9.10938356e-31  # Mass of electron (kg), more precise value
+v = 0.01 * c        # Velocity of the electron
+
+# Calculate the relativistic momentum
+p = me * v / np.sqrt(1 - (v/c)**2)
+
+# Calculate the de Broglie wavelength
+lambda_deBroglie = h / p
+
+print(f"The de Broglie wavelength of an electron traveling at 1.00% of the speed of light is {lambda_deBroglie:.6e} meters.")
+```
