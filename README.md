@@ -101,3 +101,14 @@ The configuration parameters control various aspects of the system:
 4. Evaluation:
    - `score`: Decides if the evaluation module is enabled
 
+## Cite Us
+
+```
+@inproceedings{tang2025chemagent,
+  title={ChemAgent: Self-updating Library in Large Language Models Improves Chemical Reasoning},
+  author={Tang, Xiangru and Hu, Tianyu and Ye, Muyang and Shao, Yanjun and Yin, Xunjian and Ouyang, Siru and Zhou, Wangchunshu and Lu, Pan and Zhang, Zhuosheng and Zhao, Yilun and others},
+  booktitle={The Twelfth International Conference on Learning Representations}
+} 
+```
+
+
