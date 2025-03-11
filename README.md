@@ -1,4 +1,4 @@
-# ChemAgent: Self-updating Memories in Large Language Models Improves Chemical Reasoning
+# [ICLR 2025] ChemAgent: Self-updating Memories in Large Language Models Improves Chemical Reasoning
 ## Table of Contents
 
 - [Overview](#overview)
