@@ -1,4 +1,16 @@
 # [ICLR 2025] ChemAgent: Self-updating Memories in Large Language Models Improves Chemical Reasoning
+
+<p align="left">
+      <a href='https://arxiv.org/abs/2501.06590'><img src='https://img.shields.io/badge/ChemAgent-arXiv-d63031?logo=arxiv&logoColor=white'></a>
+<a href="https://github.com/gersteinlab/ChemAgent/blob/public-release/LICENSE" alt="license">
+    <img src="https://img.shields.io/badge/license-Apache--2.0-%23002FA7" /></a>
+<a href="https://github.com/gersteinlab/ChemAgent/issues" alt="docs">
+    <img src="https://img.shields.io/github/issues-raw/gersteinlab/BC-Design?color=%23FF9600" /></a>
+<a href="https://img.shields.io/github/stars/gersteinlabChemAgent/" alt="arXiv">
+    <img src="https://img.shields.io/github/stars/gersteinlab/ChemAgent" /></a>
+</p>
+
+
 ## Table of Contents
 
 - [Overview](#overview)
