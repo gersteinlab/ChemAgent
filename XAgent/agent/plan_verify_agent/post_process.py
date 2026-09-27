@@ -3,9 +3,11 @@ import re
 import sys
 from io import StringIO
 
+from XAgent.agent.simple_agent.post_process import exec_code as simple_exec_code
+
 
 def remove_not(x):
-    match_number = re.compile("[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
+    match_number = re.compile(r"[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
     result = re.findall(match_number, x)
     if len(result) != 0:
         return re.split(match_number, x)[-1]
@@ -30,7 +32,7 @@ def cal_not(inputs):
 
     try:
         x, ab = list(inputs)
-        match_number = re.compile("10\^[{]?\ *-?[0-9]+\ *[}]?")
+        match_number = re.compile(r"10\^[{]?\ *-?[0-9]+\ *[}]?")
         ab = re.findall(match_number, ab)[0]
         ab = ab[ab.find("^") + 1 :]
         if "{" in ab:
@@ -119,15 +121,6 @@ def extract_code(raw_string):
 
 
 def exec_code(code):
-    ans = "None"
-    old_stdout = sys.stdout
-    redirected_output = sys.stdout = StringIO()
-    try:
-        exec(code)
-        sys.stdout = old_stdout
-        ans = redirected_output.getvalue().strip()
-    except:
-        sys.stdout = old_stdout
-        print("fail when exec the code")
+    if code is None:
         return "None"
-    return ans
+    return simple_exec_code(code)

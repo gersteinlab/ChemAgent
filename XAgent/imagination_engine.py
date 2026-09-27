@@ -1,12 +1,11 @@
 try:
-    from XAgent.config import CONFIG
+    from XAgent.config import CONFIG, get_chat_client
 except ImportError:
-    from config import CONFIG
-from openai import AzureOpenAI
+    from config import CONFIG, get_chat_client
 import re
 
 IMG_PROMPT = """
-Please create {{top_k}} advanced chemistry questions suitable for in-depth understanding and application of chemical formulas and principles. Each question should focus on the deeper aspects of the [topic] provided in order to understand the principles of chemistry and the reasoning process.
+Please create {{topk}} advanced chemistry questions suitable for in-depth understanding and application of chemical formulas and principles. Each question should focus on the deeper aspects of the [topic] provided in order to understand the principles of chemistry and the reasoning process.
 [topic]: {{topic}}
 Guidelines for Problem Creation: 
 •	Use of Samples: You are provided with sample questions for reference. Feel free to use these to guide the style and depth of the problems. 
@@ -55,18 +54,12 @@ def call_engine(query):
     """
     ask chatgpt
     """
-    model = CONFIG.default_completion_kwargs["model"]
-    model_name = CONFIG.api_keys[model][0]["engine"]
     message = [{"content": query, "role": "user"}]
     response = None
-    temp = int(CONFIG.default_completion_kwargs["temperature"])
+    temp = float(CONFIG.default_completion_kwargs["temperature"])
 
     try:
-        client = AzureOpenAI(
-            api_key=CONFIG.api_keys[model][0]["api_key"],
-            api_version=CONFIG.api_keys[model][0]["api_version"],
-            azure_endpoint=CONFIG.api_keys[model][0]["api_base"],
-        )
+        client, model_name = get_chat_client()
         response = client.chat.completions.create(
             model=model_name,
             messages=message,
@@ -98,6 +91,8 @@ def imagination(topic, res, topk):
     for i in range(3):
         img_prompt = ""
         text = call_engine(msg)
+        if text is None:
+            continue
         matches = re.findall(r"\[Task Start\].*?\[Task End\]", text, re.DOTALL)
         if matches:
             for match in matches:

@@ -15,7 +15,7 @@ tiktoken
 tqdm
 uvicorn
 json5
-openai
+openai>=1.0
 python-dotenv
 sqlalchemy
 tenacity
@@ -29,7 +29,10 @@ cryptography
 inputimeout
 pytest
 numpy
+pandas
+openpyxl
+beautifulsoup4
 llama-index-llms-azure-openai
 llama-index-embeddings-azure-openai
-llama-index
+llama-index>=0.10
 llama-index-vector-stores-postgres

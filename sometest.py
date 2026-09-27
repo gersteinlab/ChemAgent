@@ -364,6 +364,7 @@ def env(args=None, whole_task=None, whole_solution=None):
     subtasks = ""
     while not success and attempts < max_attempts:
         try:
+            final_output_tasks = []
             agent = EnvAgent(CONFIG, [prompt_messages[0], prompt_messages[1]])
             logger.typewriter_log(f"begin parsing...  ", Fore.YELLOW, "AH?")
             new_message, _ = agent.parse(
@@ -456,6 +457,7 @@ def env(args=None, whole_task=None, whole_solution=None):
     count_sub = 0
     while not success and attempts < max_attempts:
         try:
+            final_output_tasks_sorted = []
             agent = EnvAgent(CONFIG, [prompt_messages[6], prompt_messages[7]])
             logger.typewriter_log(f"begin parsing...  ", Fore.YELLOW, "AH?")
             new_message, _ = agent.parse(
@@ -491,20 +493,22 @@ def env(args=None, whole_task=None, whole_solution=None):
             logger.typewriter_log(f"sub-solutions:  ", Fore.RED, subsolutions)
 
             agent = EnvAgent(CONFIG, [prompt_messages[8], prompt_messages[9]])
-            for i in range(len(final_tasks.split("<st>")) - 1):
-                final_output_tasks[i] = (
+            task_with_solutions = [
+                final_output_tasks[i]
+                + "\nSOLUTION:"
+                + new_message.split("<ed>")[i].split(":")[-1]
+                for i in range(len(final_output_tasks))
+            ]
+
+            final_output_tasks_str = ""
+            for i, task_with_solution in enumerate(task_with_solutions):
+                final_output_tasks_str += (
                     "task "
                     + str(i + 1)
                     + ": {"
-                    + final_output_tasks[i]
-                    + "\nSOLUTION:"
-                    + new_message.split("<ed>")[i].split(":")[-1]
+                    + task_with_solution
                     + "}\n<end-of-a-task>\n"
                 )
-
-            final_output_tasks_str = ""
-            for i in range(len(final_tasks.split("<st>")) - 1):
-                final_output_tasks_str = final_output_tasks_str + final_output_tasks[i]
 
             final_message, _ = agent.parse(
                 placeholders={
@@ -554,13 +558,12 @@ def env(args=None, whole_task=None, whole_solution=None):
             assert count_sub == len(
                 final_output_tasks
             ), "sorter forget or add some tasks"
+            assert sorted(task_sorted) == list(
+                range(count_sub)
+            ), "sorter did not return a permutation of the tasks"
 
             for i in range(len(task_sorted)):
-                final_output_tasks_sorted.append(
-                    final_output_tasks[task_sorted[i]]
-                    .split(": {")[1]
-                    .split("}\n<end-of-a-task>\n")[0]
-                )
+                final_output_tasks_sorted.append(task_with_solutions[task_sorted[i]])
 
             assert "" not in final_output_tasks_sorted[0].split(
                 "..."

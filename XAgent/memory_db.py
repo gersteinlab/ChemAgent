@@ -3,43 +3,53 @@ from llama_index.embeddings.azure_openai import AzureOpenAIEmbedding
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
 from llama_index.core.schema import BaseNode, TextNode
 from llama_index.core.schema import TextNode, NodeRelationship, RelatedNodeInfo
-from openai import AzureOpenAI
 from llama_index.core.vector_stores import (
     MetadataFilter,
     MetadataFilters,
     FilterOperator,
 )
 from llama_index.core import StorageContext, load_index_from_storage
+import os
 
 try:
     from .imagination_engine import imagination
 except ImportError:
     from imagination_engine import imagination
 try:
-    from XAgent.config import CONFIG
+    from XAgent.config import CONFIG, get_chat_client
 except ImportError:
-    from config import CONFIG
-
-# TODO
-# pip install llama-index-llms-azure-openai,pip install llama-index-embeddings-azure-openai,pip install llama-index
-# pip install llama-index-vector-stores-postgres
+    from config import CONFIG, get_chat_client
 
 keys = CONFIG["api_keys"]["embedding"][0]
 api_key = keys["api_key"]
 azure_endpoint = keys["api_base"]
 api_version = keys["api_version"]
+embedding_deployment = keys.get("engine") or "text-embedding-ada-002"
 
 
 # Clear the current directory (CONFIG["save_dir"]) for initializing MemoryDB
 
 def MemoryDB_clear():
-    import os, shutil
+    import shutil
 
     save_dir = CONFIG["save_dir"]
     if os.path.exists(save_dir):
         print("Clearing MemoryDB")
         shutil.rmtree(save_dir)
     os.makedirs(save_dir)
+
+
+def load_or_create_index(save_dir, embed_model, name):
+    """Load a persisted index, or start an empty one if nothing is persisted yet. Never deletes data."""
+    if not os.path.exists(os.path.join(save_dir, "docstore.json")):
+        print(
+            f"WARNING: {name} has no persisted storage at '{save_dir}', starting with an empty index"
+        )
+        return VectorStoreIndex(nodes=[], embed_model=embed_model)
+    storage_context = StorageContext.from_defaults(persist_dir=save_dir)
+    index = load_index_from_storage(storage_context, embed_model=embed_model)
+    print(f"{name} read from '{save_dir}' success")
+    return index
 
 
 
@@ -58,7 +68,7 @@ class MemoryDB:
         self.insert_mode = insert_mode
         self.embed_model = AzureOpenAIEmbedding(
             api_key=api_key,
-            deployment_name="text-embedding-ada-002",
+            deployment_name=embedding_deployment,
             azure_endpoint=azure_endpoint,
             api_version=api_version,
             model="text-embedding-ada-002",
@@ -89,22 +99,9 @@ class MemoryDB:
             self.index = VectorStoreIndex(nodes=[], embed_model=self.embed_model)
             print("MemoryDB FIRST init finished")
         else:
-            try:
-                storage_context = StorageContext.from_defaults(
-                    persist_dir=self.save_dir
-                )
-                # load index
-                self.index = load_index_from_storage(
-                    storage_context,
-                    embed_model=self.embed_model,
-                )
-                print("MemoryDB read from config storage success")
-            except Exception as e:
-                print(e)
-                print("MemoryDB read from config storage failed, init new index")
-                MemoryDB_clear()
-                self.index = VectorStoreIndex(nodes=[], embed_model=self.embed_model)
-                print("MemoryDB FIRST init finished")
+            self.index = load_or_create_index(
+                self.save_dir, self.embed_model, "MemoryDB"
+            )
 
     def insert_father_node(
         self,
@@ -162,16 +159,9 @@ class MemoryDB:
             {"role": "user", "content": prompt},
         ]
 
-        client = AzureOpenAI(
-            api_key=api_key,
-            api_version=api_version,
-            azure_endpoint=azure_endpoint,
-        )
-
-        response = client.chat.completions.create(
-            model="GPT-35-Turbo-16k", messages=message_text
-        )
-        response = response.choices[0].message.content
+        client, model = get_chat_client()
+        response = client.chat.completions.create(model=model, messages=message_text)
+        response = response.choices[0].message.content.strip()
         if response in subjects:
             return response
         else:
@@ -260,12 +250,13 @@ class MemoryDB:
                         "--- Similar tasks ---"
                         in dict_node["node"]["metadata"]["action"]
                     ):
-                        break
-                    ans.append(node.to_dict())
+                        continue
+                    ans.append(dict_node)
             return ans
         except Exception as e:
             print(e)
             print("Warning: Fail to search similar sentences")
+            return []
 
     def search_from_index(self, query_sentence: str, index, namespace="", top_k=3):
         """
@@ -294,6 +285,7 @@ class MemoryDB:
         except Exception as e:
             print(e)
             print("Warning: Fail to search similar sentences")
+            return []
 
     def search_from_global(self, query_sentence: str, namespace="", top_k=3):
         res = []
@@ -377,13 +369,14 @@ class MemoryDB:
             
             # The similarity is low, it requires association.
             if average < CONFIG.imagination_threshold:
-                
+                topic = None
                 for i in range(3):
                     topic = self.get_subject(query_sentence)
                     if topic != None:
                         break
-                print(f"imagination!!!! topic is {topic}")
-                return imagination(topic, res, top_k)
+                if topic is not None:
+                    print(f"imagination!!!! topic is {topic}")
+                    return imagination(topic, res, top_k)
 
         prompt = []
 
@@ -413,7 +406,7 @@ class MemoryDB:
         return str
 
     def search_nodes(self, query_text):
-        return self.retriever.retrieve(
+        return self.index.as_retriever().retrieve(
             query_text,
         )
 

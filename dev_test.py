@@ -1,4 +1,5 @@
 from tqdm import tqdm
+import os
 import pandas as pd
 from datetime import datetime
 import numpy as np
@@ -29,6 +30,7 @@ from XAgent.config import CONFIG
 
 from XAgent.memory_db import MemoryDB_clear
 import sometest
+from evaluation import evaluate_no_llm, ratio, unit_exponent
 
 
 EVA_PROMPT_SYS = """
@@ -116,7 +118,7 @@ class EvaAgent(BaseAgent):
 
 
 def remove_not(x):
-    match_number = re.compile("[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
+    match_number = re.compile(r"[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
     result = re.findall(match_number, x)
     if len(result) != 0:
         return re.split(match_number, x)[-1]
@@ -219,40 +221,6 @@ def evaluate_ans(query, first_answer, second_answer):
     return is_it_same
 
 
-def evaluate_no_llm(query, fir, sec):
-    pattern = r"[-+]?[0-9]*\.?[0-9]+"
-    if not re.findall(pattern, sec):
-        return 0
-    fir_numbers = float(re.findall(pattern, fir)[0])
-    sec_numberss = []
-    for i in re.findall(pattern, sec):
-        sec_numberss.append(float(i))
-    is_it_same = 2
-    for sec_numbers in sec_numberss:
-        try:
-            if sec_numbers >= 1:
-                is_it_same = (
-                    1 if math.isclose(fir_numbers, sec_numbers, rel_tol=0.05) else 0
-                )
-                if is_it_same == 0:
-                    is_it_same = (
-                        1 if math.isclose(fir_numbers, float(str(format(sec_numbers,'.2e')).split('e')[0]), rel_tol=0.05) else 0
-                    )
-            else:
-                is_it_same = (
-                    1 if math.isclose(fir_numbers, sec_numbers, rel_tol=0.1) else 0
-                )
-                if is_it_same == 0:
-                    is_it_same = (
-                        1 if math.isclose(fir_numbers, float(str(format(sec_numbers,'.2e')).split('e')[0]), rel_tol=0.1) else 0
-                    )
-        except:
-            is_it_same = 2
-        if is_it_same == 1:
-            break
-    return is_it_same
-
-
 def parse_args() -> argparse.Namespace:
     """
     Parse the command line arguments and return them as an argparse.Namespace object.
@@ -345,7 +313,8 @@ def dev(tool, subject):
                     f"Splitted and sorted tasks:  --------------------", Fore.RED, " "
                 )
                 print(task_and_solution)
-            for task_and_solution in tasks_and_solutions:
+            for index, task_and_solution in enumerate(tasks_and_solutions):
+                is_last = index == len(tasks_and_solutions) - 1
                 tot += 1
                 this_task = task_and_solution.split("SOLUTION:")[0] + "\n"
                 this_solution = (
@@ -354,7 +323,8 @@ def dev(tool, subject):
                 )
                 this_final_ans = "None"
                 this_subtasks = "I do not know how to solve this task."
-                if task_and_solution != tasks_and_solutions[-1]:
+                this_knowledge = None
+                if not is_last:
                     try:
                         this_final_ans, this_subtasks, this_knowledge, _ = run.run(
                             [
@@ -366,7 +336,8 @@ def dev(tool, subject):
                                 tool,
                             ]
                         )
-                    except:
+                    except Exception as e:
+                        print(e)
                         this_final_ans = "error occurs when solving the task"
                         this_subtasks = "I do not know how to solve this task."
 
@@ -380,7 +351,7 @@ def dev(tool, subject):
                         eva_failed += 1
                     if same_or_not == 1:
                         cor += 1
-
+                    if same_or_not == 1 and this_knowledge is not None:
                         DB = PlanMemoryDB(init_mode=False)
                         DB.insert_sentence(
                             this_task.split("QUESTION:")[1], this_knowledge, "SUCCESS"
@@ -404,19 +375,21 @@ def dev(tool, subject):
                     logger.typewriter_log(
                         f"This task End  ------------------------", Fore.RED, " "
                     )
-                if task_and_solution == tasks_and_solutions[-1]:
+                if is_last:
                     try:
                         this_final_ans, this_subtasks, this_knowledge, _ = run.run(
                             [
                                 "--task",
-                                this_task + this_solution.split(corr_answer)[0],
+                                # hide the appended final answer from the agent
+                                this_task + this_solution.rsplit(corr_answer, 1)[0],
                                 "--insert",
                                 "True",
                                 "--tool",
                                 tool,
                             ]
                         )
-                    except:
+                    except Exception as e:
+                        print(e)
                         this_final_ans = "error occurs when solving the task"
                     if not this_final_ans or this_final_ans.strip() == "":
                         this_final_ans = "None"
@@ -429,7 +402,7 @@ def dev(tool, subject):
                         eva_failed += 1
                     if same_or_not == 1:
                         cor += 1
-
+                    if same_or_not == 1 and this_knowledge is not None:
                         DB = PlanMemoryDB(init_mode=False)
                         DB.insert_sentence(
                             this_task.split("QUESTION:")[1], this_knowledge, "SUCCESS"
@@ -438,7 +411,7 @@ def dev(tool, subject):
 
                         print(this_knowledge)
                         print("!!!!!!!!!!!!inserted!!!!!!!!!!!!!!!!!")
-                    print(tot, cor, eva_failed, (cor / (tot - eva_failed)), (cor / tot))
+                    print(tot, cor, eva_failed, ratio(cor, tot - eva_failed), ratio(cor, tot))
 
 
 def test(tool, subject, tag):
@@ -492,28 +465,31 @@ def test(tool, subject, tag):
                 final_answer = "error occurs when solving the task"
             print("final answer is: \n", final_answer, "\n")
             print("correct answer is: \n", corr_answer + " " + unit_prob_print, "\n")
-            if not final_answer or final_answer.strip() == "":
+            if not final_answer or str(final_answer).strip() == "":
                 final_answer = "None"
+            final_answer = str(final_answer)
             final_answers.append(final_answer)
-            solve_func.append(msg)
+            solve_func.append(str(msg))
             corr_answers.append(corr_answer + " " + unit_prob_print)
             # same_or_not = evaluate(final_answer, corr_answer + " " + unit_prob)
-            same_or_not = evaluate_no_llm(problem_text_0, corr_answer, final_answer)
+            same_or_not = evaluate_no_llm(
+                problem_text_0, corr_answer, final_answer, unit_exponent(unit_prob_print)
+            )
             if same_or_not == 2:
                 eva_failed += 1
             if same_or_not == 1:
                 cor += 1
                 corr_final_answers.append(final_answer)
-                corr_solve.append(msg)
+                corr_solve.append(str(msg))
                 corr_corr_answers.append(corr_answer + " " + unit_prob_print)
-            print(tot, cor, eva_failed, (cor / (tot - eva_failed)), (cor / tot))
+            print(tot, cor, eva_failed, ratio(cor, tot - eva_failed), ratio(cor, tot))
     print("total task's number: ", tot)
     print("correct solved tasks: ", cor)
     print("evaluation failed tasks: ", eva_failed)
     print(
-        "accuracy (not consider evaluation failed ones): ", (cor / (tot - eva_failed))
+        "accuracy (not consider evaluation failed ones): ", ratio(cor, tot - eva_failed)
     )
-    print("accuracy (full): ", (cor / tot))
+    print("accuracy (full): ", ratio(cor, tot))
     for i in range(len(final_answers)):
         print(final_answers[i], ";", corr_answers[i], "\n")
         visual_answer_pairs.append(final_answers[i] + ";")
@@ -521,6 +497,7 @@ def test(tool, subject, tag):
     print(corr_final_answers)
     print(corr_corr_answers)
 
+    os.makedirs("./results_{}".format(tool), exist_ok=True)
     with open("./results_{}/{}.txt".format(tool, subject), "a+", encoding="utf-8") as f:
         f.write(
             f"Config: img {str(CONFIG.image)},refine {str(CONFIG.refine)},score {str(CONFIG.score)}, eva {CONFIG.eva_model}\n"
@@ -530,10 +507,10 @@ def test(tool, subject, tag):
         f.write("evaluation failed tasks: " + str(eva_failed) + "\n")
         f.write(
             "accuracy (not consider evaluation failed ones): "
-            + str(cor / (tot - eva_failed))
+            + str(ratio(cor, tot - eva_failed))
             + "\n"
         )
-        f.write("accuracy (full): " + str((cor / tot)) + "\n")
+        f.write("accuracy (full): " + str(ratio(cor, tot)) + "\n")
         f.write("\n\n-----------------------------------\n\n")
         f.write(
             "\n".join(
@@ -570,8 +547,8 @@ def test(tool, subject, tag):
         tot,
         cor,
         eva_failed,
-        cor / (tot - eva_failed),
-        cor / tot,
+        ratio(cor, tot - eva_failed),
+        ratio(cor, tot),
         datetime.now(),
         str(final_answers),
         str(corr_answers),
@@ -587,23 +564,19 @@ def test(tool, subject, tag):
 
     import openpyxl
 
-    try:
-
-        workbook = openpyxl.load_workbook(
-            "results_excel.xlsx",
-        )
-
-        worksheet = workbook["sheet_now"]
-
-        worksheet.append(data)
-
-        workbook.save(
-            "results_excel.xlsx",
-        )
-        workbook.close()
-        print("Excel write success！")
-    except FileNotFoundError:
+    excel_path = "results_excel.xlsx"
+    if os.path.exists(excel_path):
+        workbook = openpyxl.load_workbook(excel_path)
+    else:
         print("Excel file not found, create a new one")
+        workbook = openpyxl.Workbook()
+        workbook.active.title = "sheet_now"
+    if "sheet_now" not in workbook.sheetnames:
+        workbook.create_sheet("sheet_now")
+    workbook["sheet_now"].append(data)
+    workbook.save(excel_path)
+    workbook.close()
+    print("Excel write success！")
 
 
 if __name__ == "__main__":
@@ -655,7 +628,7 @@ if __name__ == "__main__":
                     ]
                 )
             dev(args.tool, source)
-            test(args.tool, source)
+            test(args.tool, source, args.tag)
         if args.mode == "debug":
             pass
 

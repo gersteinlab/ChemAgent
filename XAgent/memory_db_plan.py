@@ -13,10 +13,10 @@ from llama_index.core import StorageContext, load_index_from_storage
 
 try:
     from XAgent.config import CONFIG
+    from XAgent.memory_db import load_or_create_index, embedding_deployment
 except ImportError:
     from config import CONFIG
-
-# TODO
+    from memory_db import load_or_create_index, embedding_deployment
 
 
 keys = CONFIG["api_keys"]["embedding"][0]
@@ -68,7 +68,7 @@ class PlanMemoryDB:
         self.insert_mode = insert_mode
         self.embed_model = AzureOpenAIEmbedding(
             api_key=api_key,
-            deployment_name="text-embedding-ada-002",
+            deployment_name=embedding_deployment,
             azure_endpoint=azure_endpoint,
             api_version=api_version,
             model="text-embedding-ada-002",
@@ -81,22 +81,9 @@ class PlanMemoryDB:
             self.index = VectorStoreIndex(nodes=[], embed_model=self.embed_model)
             print("PlanMemoryDB FIRST init finished")
         else:
-            try:
-                storage_context = StorageContext.from_defaults(
-                    persist_dir=self.save_dir
-                )
-                # load index
-                self.index = load_index_from_storage(
-                    storage_context,
-                    embed_model=self.embed_model,
-                )
-                print("PlanMemoryDB read from config storage success")
-            except Exception as e:
-                print(e)
-                print("MemoryDB read from config storage failed, init new index")
-                MemoryDB_clear()
-                self.index = VectorStoreIndex(nodes=[], embed_model=self.embed_model)
-                print("MemoryDB FIRST init finished")
+            self.index = load_or_create_index(
+                self.save_dir, self.embed_model, "PlanMemoryDB"
+            )
 
     def insert_sentence(
         self,
@@ -162,9 +149,10 @@ class PlanMemoryDB:
         except Exception as e:
             print(e)
             print("Warning: Fail to search similar sentences")
+            return ""
 
     def search_nodes(self, query_text):
-        return self.retriever.retrieve(
+        return self.index.as_retriever().retrieve(
             query_text,
         )
 

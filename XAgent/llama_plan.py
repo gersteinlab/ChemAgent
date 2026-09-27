@@ -1,5 +1,7 @@
-from openai import AzureOpenAI
 from copy import deepcopy
+
+from XAgent.config import CONFIG, get_chat_client
+from XAgent.llama_father import parse_literal
 
 SYSTEM_PROMPT = """You are a Chemistry expert and an efficient plan-generation agent.
 
@@ -112,16 +114,13 @@ def llama_parse(placeholders):
                 message["content"] = message["content"].replace(
                     "{{" + str(key) + "}}", str(value)
                 )
-    res_json = None
-    success = 0
-    while success == 0:
+    for attempt in range(CONFIG.max_retry_times):
         try:
-            res_json = eval(llama_call_engine(None, filled_messages))
-            success = 1
+            return parse_literal(llama_call_engine(None, filled_messages))
         except Exception as e:
             print(e)
-            print("chatcompletion: using gpt-3.5-turbo-16k Fail")
-    return res_json
+            print(f"llama_parse attempt {attempt + 1} failed")
+    raise RuntimeError("llama_parse: no parsable response from the model")
 
 def llama_call_engine(self, message):
     """
@@ -130,23 +129,20 @@ def llama_call_engine(self, message):
 
     response = None
     temp = 0.2
-    for i in range(1):
-        try:
-            client = AzureOpenAI(
-                api_key=os.getenv("OPENAI_API_KEY", None),
-            )
+    try:
+        client, model = get_chat_client()
 
-            response = client.chat.completions.create(
-                model="GPT-35-turbo",
-                messages=message,
-                temperature=temp,
-            )
+        response = client.chat.completions.create(
+            model=model,
+            messages=message,
+            temperature=temp,
+        )
 
-            response = response.choices[0].message.content
+        response = response.choices[0].message.content
 
-        except Exception as e:
-            print(e)
-            print("chatcompletion: using gpt-3.5-turbo-16k Fail")
+    except Exception as e:
+        print(e)
+        print("chatcompletion: llama_call_engine Fail")
     return response
 
 
