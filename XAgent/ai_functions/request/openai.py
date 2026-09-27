@@ -1,7 +1,12 @@
 import json
 import openai
 from XAgent.logs import logger
-from XAgent.config import CONFIG, get_apiconfig_by_model, get_model_name
+from XAgent.config import (
+    CONFIG,
+    build_chat_client,
+    get_apiconfig_by_model,
+    get_model_name,
+)
 
 from tenacity import (
     retry,
@@ -135,46 +140,13 @@ else:
             kwargs.pop("model", CONFIG.default_completion_kwargs["model"])
         )
         logger.debug("chatcompletion: using " + model_name)
-        chatcompletion_kwargs = get_apiconfig_by_model(model_name)
-
         request_timeout = kwargs.pop("request_timeout", 30)
-        if "api_version" in chatcompletion_kwargs:
-            if "base_url" in chatcompletion_kwargs:
-                base_url = chatcompletion_kwargs.pop("base_url", None)
-            else:
-                base_url = chatcompletion_kwargs.pop("api_base", None)
-            azure_endpoint = chatcompletion_kwargs.pop("azure_endpoint", base_url)
-            api_version = chatcompletion_kwargs.pop("api_version", None)
-            api_key = chatcompletion_kwargs.pop("api_key", None)
-            chatcompletion_kwargs.pop("api_type", None)
-            if "engine" in chatcompletion_kwargs:
-                model = chatcompletion_kwargs.pop("engine", None)
-            else:
-                model = chatcompletion_kwargs.pop("model", None)
-            chatcompletion_kwargs.update({"model": model})
-            chatcompletion_kwargs.update(kwargs)
-            client = openai.AzureOpenAI(
-                api_key=api_key,
-                azure_endpoint=azure_endpoint,
-                api_version=api_version,
-                timeout=request_timeout,
-            )
-        else:
-            if "base_url" in chatcompletion_kwargs:
-                base_url = chatcompletion_kwargs.pop("base_url", None)
-            else:
-                base_url = chatcompletion_kwargs.pop("api_base", None)
-            api_key = chatcompletion_kwargs.pop("api_key", None)
-            organization = chatcompletion_kwargs.pop("organization", None)
-            chatcompletion_kwargs.update(kwargs)
-            client = openai.OpenAI(
-                api_key=api_key,
-                organization=organization,
-                base_url=base_url,
-                timeout=request_timeout,
-            )
+        kwargs.pop("schema_error_retry", None)
+        client, model = build_chat_client(
+            get_apiconfig_by_model(model_name), request_timeout
+        )
         try:
-            completions = client.chat.completions.create(**chatcompletion_kwargs)
+            completions = client.chat.completions.create(model=model, **kwargs)
             response = completions.model_dump()
             if response["choices"][0]["finish_reason"] == "length":
                 raise BadRequestError(
@@ -194,16 +166,10 @@ else:
                         model_name = "gpt-3.5-turbo-16k"
 
                 print(f"max context length reached, retrying with {model_name}")
-                chatcompletion_kwargs = get_apiconfig_by_model(model_name)
-                request_timeout = kwargs.pop("request_timeout", 60)
-                if "base_url" in chatcompletion_kwargs:
-                    base_url = chatcompletion_kwargs.pop("base_url", None)
-                else:
-                    base_url = chatcompletion_kwargs.pop("api_base", None)
-                api_key = chatcompletion_kwargs.pop("api_key", None)
-                chatcompletion_kwargs.update(kwargs)
-                chatcompletion_kwargs.pop("schema_error_retry", None)
-                completions = client.chat.completions.create(**chatcompletion_kwargs)
+                client, model = build_chat_client(
+                    get_apiconfig_by_model(model_name), request_timeout
+                )
+                completions = client.chat.completions.create(model=model, **kwargs)
                 response = completions.model_dump()
             else:
                 raise e

@@ -1,5 +1,4 @@
-from XAgent.config import CONFIG
-from openai import AzureOpenAI
+from XAgent.config import CONFIG, get_chat_client
 import re
 
 
@@ -7,18 +6,13 @@ def call_engine(query):
     """
     ask chatgpt
     """
-    model = CONFIG.eva_model
-    model_name = CONFIG.api_keys[model][0]["engine"]
+    model_name = CONFIG.eva_model
     message = [{"content": query, "role": "user"}]
     response = None
     temp = int(CONFIG.default_completion_kwargs["temperature"])
 
     try:
-        client = AzureOpenAI(
-            api_key=CONFIG.api_keys[model][0]["api_key"],
-            api_version=CONFIG.api_keys[model][0]["api_version"],
-            azure_endpoint=CONFIG.api_keys[model][0]["api_base"],
-        )
+        client, model_name = get_chat_client(CONFIG.eva_model)
         response = client.chat.completions.create(
             model=model_name,
             messages=message,

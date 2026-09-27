@@ -21,7 +21,7 @@ api_keys:
 
 
 
-default_request_type: openai # or xagent or llama
+default_request_type: openai # or xagent
 default_completion_kwargs:
   model: gpt-3.5-turbo-16k
   eva_model: gpt-4
@@ -51,17 +51,19 @@ experiment:
 
 traj_score_threshold: 0.7
 plan_score_threshold: 0.7
+# solve directly (no plan) when subtask goals are dissimilar from memory
+dsolve: False
 dsolve_threshold: 0.7
 pool_id: 418103
 subjects: ["gas laws", "thermodynamics", "photochemistry", "electrostatics", "spectroscopy", "molecular chemistry", "atomic chemistry", "quantum mechanics", "solid-state chemistry", "magnetic properties", "electrochemistry", "particle physics", "atomic physics", "fluid mechanics", "calorimetry", "statistical mechanics"]  
 memory_insert: True
 save_dir: "./memory/exec_memory/storage_matter_gpt4"
-plan_save_dir: "./memory/plan_memory/plan_storage_matter_gpt4"
+plan_save_dir: "./memory/plan_storage/plan_storage_matter_gpt4"
 score: False
 refine: False
 exec_topk: 3
 
-engine: gpt # or gpt
+engine: gpt # or llama
 
 image: True
 imagination_threshold: 0.9

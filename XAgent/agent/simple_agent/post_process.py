@@ -1,4 +1,5 @@
 import json
+import queue as queue_module
 import re
 import sys
 from io import StringIO
@@ -6,7 +7,7 @@ import multiprocessing
 
 
 def remove_not(x):
-    match_number = re.compile("[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
+    match_number = re.compile(r"[\$]?\ *10\^[{]?\ *-?[0-9]+\ *[}]?\ *[\$]?")
     result = re.findall(match_number, x)
     if len(result) != 0:
         return re.split(match_number, x)[-1]
@@ -31,7 +32,7 @@ def cal_not(inputs):
 
     try:
         x, ab = list(inputs)
-        match_number = re.compile("10\^[{]?\ *-?[0-9]+\ *[}]?")
+        match_number = re.compile(r"10\^[{]?\ *-?[0-9]+\ *[}]?")
         ab = re.findall(match_number, ab)[0]
         ab = ab[ab.find("^") + 1 :]
         if "{" in ab:
@@ -146,9 +147,12 @@ def exec_code(code, timeout=5):
         # Terminate the process if it is still alive after the timeout
         process.terminate()
         process.join()
-        print("Timeout: Code execution exceeded 5 seconds.")
+        print(f"Timeout: Code execution exceeded {timeout} seconds.")
         return "None"
 
     # Get the output from the queue
-    result = queue.get_nowait()
+    try:
+        result = queue.get(timeout=1)
+    except queue_module.Empty:
+        return "None"
     return result

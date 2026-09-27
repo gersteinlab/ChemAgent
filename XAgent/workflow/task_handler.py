@@ -110,13 +110,19 @@ class TaskHandler:
                 print(f"Attempt {attempts + 1}: An error occurred: {e}. Retrying...\n")
                 attempts += 1
                 gene_sub = 0
+                if attempts >= self.config.max_retry_times:
+                    raise RuntimeError(
+                        f"initial plan generation failed after {attempts} attempts"
+                    ) from e
         # workspace_hash_id = ""
 
         similar_rate_list = self.vector_db.calculate_similar_rate(goal_list)
         print(f"the goal similar rate list is {str(similar_rate_list)}")
-       
-        # average = sum(similar_rate_list) / len(similar_rate_list)
-        average = 1
+
+        if self.config.get("dsolve", False) and similar_rate_list:
+            average = sum(similar_rate_list) / len(similar_rate_list)
+        else:
+            average = 1
         if average < self.config.dsolve_threshold:
             print(f"average is {average}, Start dsolve!!!!!!!!!!!!!\n")
             ans, res = self.dsolve(self.query.task)

@@ -1,8 +1,7 @@
 import ast
 import json
 import time
-from XAgent.config import CONFIG
-from openai import AzureOpenAI
+from XAgent.config import CONFIG, get_chat_client
 import re
 
 import requests
@@ -143,18 +142,13 @@ def call_engine(query):
     """
     ask chatgpt
     """
-    model = CONFIG.eva_model
-    model_name = CONFIG.api_keys[model][0]["engine"]
+    model_name = CONFIG.eva_model
     message = [{"content": query, "role": "user"}]
     response = None
     temp = int(CONFIG.default_completion_kwargs["temperature"])
 
     try:
-        client = AzureOpenAI(
-            api_key=CONFIG.api_keys[model][0]["api_key"],
-            api_version=CONFIG.api_keys[model][0]["api_version"],
-            azure_endpoint=CONFIG.api_keys[model][0]["api_base"],
-        )
+        client, model_name = get_chat_client(CONFIG.eva_model)
         response = client.chat.completions.create(
             model=model_name,
             messages=message,
@@ -176,6 +170,8 @@ def search_from_concept(goal):
         "I'm solving a difficult chemistry problem, please distill an incomprehensible chemistry concept from a problem, I'll look it up on the wiki. Don't answer superfluous, just return a concept. The questions are as follows: "
         + goal
     )
+    if concept is None:
+        return ""
     res = wiki.search_step(concept)
     if "Could not find" in res:
         return ""
@@ -183,4 +179,5 @@ def search_from_concept(goal):
         return "\nHere are some relevant materials to help you: " + str(res) + "\n"
 
 
-search_from_concept("sun")
+if __name__ == "__main__":
+    print(search_from_concept("sun"))

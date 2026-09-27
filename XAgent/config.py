@@ -188,3 +188,46 @@ def get_apiconfig_by_model(model_name: str) -> dict:
         CONFIG.api_keys[normalized_model_name].pop(0)
     )
     return apiconfig
+
+
+def build_chat_client(apiconfig: dict, timeout=None):
+    """
+    Build an OpenAI or Azure OpenAI client from an `api_keys` entry.
+
+    Returns:
+        tuple: (client, model or deployment name to pass to `chat.completions.create`).
+    """
+    import openai
+
+    api_key = apiconfig.get("api_key") or os.getenv("OPENAI_API_KEY")
+    base_url = apiconfig.get("base_url") or apiconfig.get("api_base")
+    model = apiconfig.get("engine") or apiconfig.get("model")
+    if apiconfig.get("api_version"):
+        client = openai.AzureOpenAI(
+            api_key=api_key,
+            azure_endpoint=apiconfig.get("azure_endpoint", base_url),
+            api_version=apiconfig["api_version"],
+            timeout=timeout,
+        )
+    else:
+        client = openai.OpenAI(
+            api_key=api_key,
+            organization=apiconfig.get("organization"),
+            base_url=base_url,
+            timeout=timeout,
+        )
+    return client, model
+
+
+def get_chat_client(model_name: str = None, timeout=None):
+    """
+    Build a chat client for a configured model (defaults to the completion model).
+
+    Returns:
+        tuple: (client, model or deployment name to pass to `chat.completions.create`).
+    """
+    normalized_model_name = get_model_name(model_name)
+    client, model = build_chat_client(
+        get_apiconfig_by_model(normalized_model_name), timeout
+    )
+    return client, model or normalized_model_name

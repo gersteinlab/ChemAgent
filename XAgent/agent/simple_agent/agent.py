@@ -11,8 +11,7 @@ from XAgent.message_history import Message
 from XAgent.logs import logger
 from XAgent.data_structure.node import ToolNode
 from XAgent.ai_functions import function_manager, objgenerator
-from XAgent.config import CONFIG
-from openai import AzureOpenAI
+from XAgent.config import CONFIG, get_chat_client
 from .post_process import (
     parse_math_answer,
     remove_not,
@@ -39,18 +38,11 @@ class SimpleAgent(BaseAgent):
         """
         ask chatgpt
         """
-        model = CONFIG.default_completion_kwargs["model"]
-        model_name = CONFIG.api_keys[model][0]["engine"]
-
         response = None
         temp = 0.2
         for i in range(6):
             try:
-                client = AzureOpenAI(
-                    api_key=CONFIG.api_keys[model][0]["api_key"],
-                    api_version=CONFIG.api_keys[model][0]["api_version"],
-                    azure_endpoint=CONFIG.api_keys[model][0]["api_base"],
-                )
+                client, model_name = get_chat_client()
                 response = client.chat.completions.create(
                     model=model_name,
                     messages=message,

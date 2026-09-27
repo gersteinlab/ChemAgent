@@ -11,7 +11,6 @@ from XAgent.agent.dispatcher import XAgentDispatcher
 from XAgent.agent import (
     PlanGenerateAgent,
     PlanRefineAgent,
-    ToolAgent,
     ReflectAgent,
     FatherReflectAgent,
     SimpleAgent,
@@ -86,7 +85,6 @@ class XAgentCoreComponents(metaclass=abc.ABCMeta):
         self.available_agents = [
             PlanGenerateAgent,
             PlanRefineAgent,
-            ToolAgent,
             ReflectAgent,
             FatherReflectAgent,
             SimpleAgent,
